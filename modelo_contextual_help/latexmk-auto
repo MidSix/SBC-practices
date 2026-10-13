@@ -1,0 +1,65 @@
+#!/bin/bash
+# latexmk-auto: latexmk + install missing TeX Live packages on the fly
+# (what MiKTeX does on Windows). For TinyTeX / BasicTeX on macOS.
+#
+# Usage: latexmk-auto [latexmk options] file.tex
+# Runs latexmk; if the output says a file, font or babel language is missing,
+# finds its package with tlmgr, installs it and builds again.
+
+# vscode may not inherit the shell PATH, so add the usual TeX folders
+for d in "$HOME/Library/TinyTeX/bin/universal-darwin" /Library/TeX/texbin; do
+    [ -d "$d" ] && PATH="$d:$PATH"
+done
+export PATH
+
+MAX_TRIES=15
+tried=" "                               # packages already attempted
+force=""                                # -g after an install: latexmk thinks it's up to date
+out=$(mktemp -t latexmk-auto)
+trap 'rm -f "$out"' EXIT
+
+# package that contains a file, e.g. sectsty.sty -> sectsty
+package_of() {
+    tlmgr search --global --file "/$1" 2>/dev/null | awk -v f="$1" '
+        /^[^ \t].*:$/ && !/^tlmgr/ { pkg = substr($0, 1, length($0) - 1); next }
+        /^[ \t]/ { n = split($1, p, "/"); if (p[n] == f) { print pkg; exit } }'
+}
+
+for ((i = 1; i <= MAX_TRIES; i++)); do
+    latexmk $force "$@" 2>&1 | tee "$out"
+    status=${PIPESTATUS[0]}
+
+    # what is missing? (works with and without -file-line-error)
+    file=$(grep -aoE "File \`[^\`']+' not found|I can't find file \`[^\`']+'" "$out" \
+        | sed -E "s/.*[\`']([^\`']+)'.*/\1/" | grep -v '\.tex$' | head -1)
+    font=$(grep -aoE '! Font \\[^=]+=[^ ]+' "$out" | sed -E 's/.*=//' | head -1)
+    lang=$(grep -aoE "Package babel Error: Unknown option '[a-z]+'" "$out" | sed -E "s/.*'([a-z]+)'/\1/" | head -1)
+
+    pkgs=""
+    if [ -n "$lang" ]; then
+        pkgs="babel-$lang hyphen-$lang"
+    elif [ -n "$file" ]; then
+        pkgs=$(package_of "$file")
+    elif [ -n "$font" ]; then
+        pkgs=$(package_of "$font.tfm")
+    fi
+
+    [ -z "$file$font$lang" ] && exit $status                 # nothing missing: done
+    new=""
+    for p in $pkgs; do [[ "$tried" == *" $p "* ]] || new="$new $p"; done
+    if [ -z "$new" ]; then
+        echo "latexmk-auto: no TeX Live package provides ${file:-${font:-babel-$lang}} (typo?)" >&2
+        exit $status
+    fi
+
+    echo ""
+    echo "latexmk-auto: installing missing package(s):$new"
+    for p in $new; do
+        tried="$tried$p "
+        tlmgr install "$p" || echo "latexmk-auto: could not install $p" >&2
+    done
+    force="-g"
+done
+
+echo "latexmk-auto: gave up after $MAX_TRIES attempts" >&2
+exit $status
