@@ -9,6 +9,16 @@
 > 4. La **Parte V es el banco de preguntas**: respondedlas en grupo **por escrito**. Si alguna respuesta contradice lo que hay en el LaTeX, hay que cambiar el LaTeX.
 > 5. La Parte VI resume qué he cambiado en OM-1…OM-3 y por qué.
 
+1. ¿Qué papel juega CommonKADS?
+
+CommonKADS no es un lenguaje ni un software: es la metodología (los planos).
+
+Igual que en ingeniería de software usas diagramas UML antes de programar en Java, en IA usas CommonKADS para analizar y modelar el conocimiento del experto antes de escribir reglas.
+Te organiza el proyecto en 3 niveles de preguntas:
+Contexto (OM, TM, AM): ¿Por qué? (problemas de la empresa, qué tareas necesitan IA).
+Conceptual (Conocimiento, Comunicación): ¿Qué? (qué sabe el experto, independiente de la tecnología).
+Artefactual (Diseño): ¿Cómo? (en qué lenguaje y software se programa al final).
+
 ---
 
 
@@ -215,7 +225,7 @@ Clasificación · Asesoramiento · Diagnóstico · Monitorización · Síntesis 
 - ❌ Contexto sin datos concretos de la empresa. En el ejemplo de Horarios dan cifras (66 profesores, 33 aulas). ✅ He añadido un **perfil de empresa** (≈60 empleados, ≈400 envíos/día, transitario que consolida). **Estas cifras son inventadas (empresa ficticia, que está permitido)**: decidid si las mantenéis, porque OM-5 se apoya en ellas.
 
 **Cómo defender nuestro OM-1:**
-- Cada problema se puede **rastrear** hasta una tarea de OM-3 y un activo de OM-4: P1/P3 → T2, T4 y K3; P2 → T5, T8 y K2, K7; P4 → K2, K4, K6 (cambian); P5 → T6 y K8, K9; P6 → T7 y K10, K11.
+- Cada problema se puede **rastrear** hasta una tarea de OM-3 y un activo de OM-4: P1/P3 → T2, T4 y K3; P2 → T5, T8 y K2, K7; P4 → K2, K4, K6 (cambian); P5 → T6 y K8 (más los datos de tarifas y plazos); P6 → T7 y K9, K10.
 - El contexto **explica por qué** son problemas: la estrategia de la empresa es la fiabilidad y el cumplimiento normativo, así que un error de cumplimiento golpea en el centro de su estrategia.
 
 ## OM-2 — Aspectos variables del área elegida
@@ -248,12 +258,23 @@ Clasificación · Asesoramiento · Diagnóstico · Monitorización · Síntesis 
 
 **Cambios que he hecho (y por qué):**
 1. Nombres **coherentes con OM-2** (antes ponía "Responsable de transporte", que no existe en OM-2: el rol es "Responsable de tráfico"; "Apartamento" → "Mercancías peligrosas"; "¿Dónde?" ahora usa los nombres exactos de las cajas del organigrama).
-2. Recursos de conocimiento con **código K1…K13** y marca **(F)/(NF)** → trazabilidad directa con OM-4 y cumplimiento de la nota del enunciado.
+2. Recursos de conocimiento con **código K1…K11** y marca **(F)/(NF)** → trazabilidad directa con OM-4 y cumplimiento de la nota del enunciado.
 3. **Criterio de importancia definido** (Alta = un error puede causar un incidente de seguridad, una sanción o una retención; Media = retrasos o sobrecostes; Baja = errores fáciles de corregir). Antes no había criterio, y el enunciado lo pide.
 4. T7 (agrupación) pasa de **Media a Alta**, aplicando el criterio: agrupar mercancías incompatibles = **incidente de seguridad**. Además es el núcleo de vuestra idea.
 5. T4 antes decía "Resultados de las tareas previas" como recurso de conocimiento. **Eso es un objeto de entrada, no conocimiento.** Ahora T4 usa K2, K3, K4 y K6 (criterios de admisión).
 
-**Punto débil a vigilar:** T9 tiene "Parcialmente" en una columna que pide sí/no. Lo he dejado porque la profesora ya lo vio, pero si os lo piden: "Sí, en grado bajo (requiere experiencia K5 en retenciones), pero de importancia media y no se automatiza en esta iteración".
+**Error corregido después (16/10): datos que se hacían pasar por conocimiento.**
+Un recurso de conocimiento es lo que permite **interpretar, decidir o actuar** (Tema 1: dato → información → conocimiento). Una tarifa, un plazo, un historial o una plantilla son **datos o información**: la tarea los **usa**, pero no razona con ellos por sí solos.
+| Antes | Problema | Ahora |
+|---|---|---|
+| K8 "Tarifas, plazos y condiciones de los transportistas" | Tarifas y plazos son datos; las "condiciones" (restricciones) ya estaban en K6 | Eliminado. Los datos figuran en OM-2 (Recursos) y en TM-1 de T6 (objetos internos). Lo que sí es conocimiento en T6 es K8 "Experiencia en la selección del modo" (antes K9) |
+| K13 "Historial de envíos e incidencias" | Es un registro de datos | Eliminado. Figura en OM-2 (Recursos, dentro del programa de gestión) |
+| K12 "Modelos de documentos" | Una plantilla es un soporte, no conocimiento | Ahora K11 "Normas de cumplimentación de los documentos de transporte y aduana": saber **qué** poner en cada documento según el modo y el destino |
+| K7 "Instrucciones de embalaje y etiquetado" | Las instrucciones de **un** bulto son información: es la **salida** de T4 (lo dice vuestra TM-1 de T4) | Ahora K7 "Pericia en embalaje y etiquetado de bultos" (NF, del operario de almacén): la habilidad práctica de embalar bien |
+
+Regla rápida para defenderlo: **si se puede actualizar copiando un fichero (tarifas nuevas, un historial), es un dato; si hace falta que alguien entienda y aplique un criterio, es conocimiento.** Se renumeró todo a K1…K11 (K9→K8, K10→K9, K11→K10, K12→K11) y los comentarios de OM-4 a (1)…(27), también en las citas de TM-2.
+
+**T9 (corregido en la revisión final):** antes ponía "Parcialmente" en una columna que pide sí/no; ahora pone **Sí** (usa la experiencia K5). Si os preguntan por qué no se automatiza siendo intensiva: tiene importancia media y su información (el historial de incidencias) aún no está estructurada, así que se deja para otra vuelta de la espiral.
 
 ## OM-4 — Activos de conocimiento
 
@@ -267,14 +288,14 @@ Clasificación · Asesoramiento · Diagnóstico · Monitorización · Síntesis 
 | **Tiempo** | ¿Está disponible **cuando** se necesita, con la rapidez necesaria? | Horarios: el director tarda un mes en hacer los horarios. |
 | **Calidad** | ¿Es correcto, completo, actualizado y homogéneo? ¿Se puede medir? | Horarios: *"la solución suele ser incorrecta y a veces incompleta"*. |
 
-**Idea clave para defenderlo:** cada "No" es un **cuello de botella del conocimiento** y, por tanto, un argumento a favor (o en contra) del SBC. Un activo con cuatro "Sí" (K1, K12) **no necesita SBC**; por eso T1 y T8 no se automatizan. **OM-4 es la justificación cuantitativa de qué tareas automatizar en OM-5.**
+**Idea clave para defenderlo:** cada "No" es un **cuello de botella del conocimiento** y, por tanto, un argumento a favor (o en contra) del SBC. Un activo con cuatro "Sí" (K1, K11) **no necesita SBC**; por eso T1 y T8 no se automatizan. **OM-4 es la justificación cuantitativa de qué tareas automatizar en OM-5.**
 
 **Decisiones de nuestro OM-4 que debéis entender:**
 - **K2 (normativa)**: la calidad es **Sí** (es la fuente oficial). El problema es forma/lugar/tiempo. Esto demuestra que no ponemos "No" a todo por sistema.
 - **K3 (experiencia del técnico)**: calidad "Sí, pero…": correcta, pero **no homogénea ni registrada**. Si os preguntan "¿por qué no 'No'?": porque el resultado del experto es fiable; lo que falla es la consistencia y la trazabilidad (es una mejora que aporta el SBC, no un fallo del experto).
-- **K10 (segregación)**: cuatro "No". Es **el activo más crítico** y el núcleo de P6: la tabla la conoce el técnico, pero la aplica tráfico, con prisa y sin criterios internos para mercancía no peligrosa (limpieza y alimentos).
+- **K9 (segregación)**: cuatro "No". Es **el activo más crítico** y el núcleo de P6: la tabla la conoce el técnico, pero la aplica tráfico, con prisa y sin criterios internos para mercancía no peligrosa (limpieza y alimentos).
 - **K5**: lugar Sí (la experiencia se usa en Aduanas, donde está), pero tiempo No (un único responsable).
-- **K8**: forma **Sí** (electrónica) → demuestra que distinguimos entre "electrónico" y "bien organizado"; los problemas están en el tiempo y la calidad.
+- **K7 (pericia en embalaje)**: solo la calidad es "No" (personal temporal sin experiencia). Es una **habilidad práctica**: el SBC no la puede mejorar (se resuelve con formación), y por eso T5 no se automatiza.
 
 **El Tema 2 añade (diapositiva 15)** que de los activos de conocimiento salen la **identificación de casos de uso**, el **análisis del impacto de la IA** y la **evaluación de la viabilidad sociotécnica**. Es decir: OM-4 alimenta OM-5.
 
@@ -296,6 +317,16 @@ Clasificación · Asesoramiento · Diagnóstico · Monitorización · Síntesis 
 - Etapas (32 semanas): análisis 3, modelado conceptual 10 (la más larga, porque incluye la **adquisición de conocimiento**, el cuello de botella clásico), diseño 4, implementación 10, pruebas 5.
 - Personal: **66.840 €**. Más expertos internos (≈4.700 €, **coste de oportunidad**), publicaciones y datos (≈2.000 €), infraestructura (≈1.000 €), formación (≈1.000 €) y contingencia del 10 % → **≈83.100 €**. Mantenimiento ≈6.000 €/año.
 - Beneficio (con **hipótesis explícitas**): ≈104 k€/año en el escenario previsto, ≈52 k€/año en el conservador → recuperación en < 1 año / < 2 años.
+
+**Cómo se demuestra que es rentable (OM-5 en prosa, versión del 16/10):**
+| Comprobación | Cálculo | Resultado |
+|---|---|---|
+| Escenario previsto | (104.250 − 6.000 de mantenimiento) = 98.250 €/año netos; 83.100 / 98.250 | **≈ 10 meses** |
+| Escenario conservador (la mitad) | (52.125 − 6.000) = 46.125 €/año; 83.100 / 46.125 | **≈ 22 meses** |
+| Solo ahorro "en dinero", conservador | Se descuenta el ahorro en consultas, que es **tiempo liberado, no dinero**: (37.500 + 30.000) / 2 = 33.750; − 6.000 = 27.750 €/año | **≈ 3 años** |
+| Umbral de rentabilidad a 3 años | 83.100 / 3 + 6.000 = **33.700 €/año** | Basta con lograr **≈ 1/3** del ahorro previsto |
+
+Conclusión que hay que saber decir: *"Con las premisas disponibles es rentable incluso en el peor caso analizado; las hipótesis que más pesan son el ahorro en retenciones y en fletes, que serían las primeras a validar con datos reales."* La tercera fila es la más fuerte para defenderlo: demuestra que no inflamos el beneficio contando como dinero el tiempo de los expertos.
 
 > ⚠️ **Hipótesis que tenéis que poder defender o cambiar**: 400 envíos/día, 5 % de envíos con consulta, 0,5 % con retenciones a 150 € de media y 2 M€/año en fletes consolidados. Son inventadas, pero **coherentes con el perfil de OM-1**. Si os preguntan "¿de dónde salen?": *"Es una empresa ficticia; son hipótesis de trabajo que en un proyecto real se validarían con los datos de la empresa durante el estudio de contexto, y por eso hay un escenario conservador."*
 
@@ -342,9 +373,9 @@ Lo que sigue estaba en el OM-5 y se quitó o se resumió al pasarlo a tabla. Os 
 | Implementación | 10 | 17 → 27 |
 | Pruebas | 5 | 27 → 32 |
 
-**Por qué T1, T5 y T8 no se automatizan (pregunta segura):** no son intensivas en conocimiento (OM-3) y sus activos (K1, K7, K12) tienen pocos cuellos de botella o ninguno (OM-4). Se resuelven con software convencional o se benefician indirectamente de la salida del SBC.
-**Por qué T9 no:** importancia media; su activo K13 aún no está estructurado; se deja para otra vuelta de la espiral.
-**Por qué T6 solo en parte:** la parte normativa (qué modos están permitidos) es conocimiento formal y crítico → la automatiza el SBC; la elección final entre los permitidos depende de factores comerciales y de relación con los transportistas (K9, experiencia tácita, cambiante) → **la mantiene el responsable de tráfico**.
+**Por qué T1, T5 y T8 no se automatizan (pregunta segura):** no son intensivas en conocimiento (OM-3) y sus activos (K1, K7, K11) tienen pocos cuellos de botella o ninguno (OM-4), y el único de K7 es una habilidad práctica que el SBC no puede mejorar. Se resuelven con software convencional o se benefician indirectamente de la salida del SBC.
+**Por qué T9 no:** importancia media; el historial de incidencias (que son datos, no conocimiento) aún no está estructurado; se deja para otra vuelta de la espiral.
+**Por qué T6 solo en parte:** la parte normativa (qué modos están permitidos) es conocimiento formal y crítico → la automatiza el SBC; la elección final entre los permitidos depende de factores comerciales y de relación con los transportistas (K8, experiencia tácita, cambiante) → **la mantiene el responsable de tráfico**.
 
 ## TM-1 — Análisis de tareas (PENDIENTE: una por tarea elegida: T2, T3, T4, T6, T7)
 
@@ -375,7 +406,7 @@ Vista doble de la tarea (Tema 2): la **vista de sistemas de información** (func
 
 ## TM-2 — Elementos de conocimiento y cuellos de botella (PENDIENTE)
 
-Uno por cada elemento de conocimiento relevante de las tareas elegidas (candidatos: **K2, K3, K4, K6, K9, K10, K11**; podéis agrupar si lo justificáis).
+Uno por cada elemento de conocimiento relevante de las tareas elegidas (candidatos: **K2, K3, K4, K6, K8, K9, K10**; podéis agrupar si lo justificáis).
 
 **Estructura:** Nombre (OM-3), Poseído por (OM-4), Usado en (OM-3), Dominio + tres bloques de **sí/no** con una columna **"¿Supone un cuello de botella? ¿Debe ser mejorado?"**:
 - **Naturaleza**: formal y riguroso · empírico y cuantitativo · heurístico y de sentido común · altamente especializado y específico del dominio · basado en la experiencia · basado en la acción (*habilidad física repetida: conducir, encestar*) · incompleto · incierto, puede ser incorrecto · cambia con rapidez · difícil de verificar · tácito y difícil de transferir.
@@ -390,8 +421,8 @@ Uno por cada elemento de conocimiento relevante de las tareas elegidas (candidat
 **Pistas:**
 - **K2 (normativa)**: formal y riguroso **Sí**; altamente especializado **Sí**; cambia con rapidez **Sí** (cuello de botella sí → mejorable: base de conocimiento versionada); forma papel/electrónica (PDF); limitación de forma **Sí** (no operativa para consultar rápido) → mejorable.
 - **K3 (experiencia del técnico)**: heurístico **Sí**; basado en la experiencia **Sí**; tácito **Sí** (cuello de botella sí; mejorable en parte: se extrae y se explicita en reglas, pero los casos nuevos siempre necesitarán al experto); mental **Sí**; limitación de tiempo y de espacio **Sí** → mejorable.
-- **K10 (segregación)**: formal (las tablas) + heurístico (criterios internos) → explicad la mezcla; incompleto **Sí** (para la mercancía no peligrosa) → mejorable completándolo con los expertos.
-- **K11 (estiba)**: basado en la experiencia y, en parte, **basado en la acción** (habilidad de los operarios para cargar físicamente): el SBC **no** puede mejorar la habilidad física, sí el plan. ← Buen ejemplo de "cuello de botella: sí; ¿mejorable con el SBC?: no".
+- **K9 (segregación)**: formal (las tablas) + heurístico (criterios internos) → explicad la mezcla; incompleto **Sí** (para la mercancía no peligrosa) → mejorable completándolo con los expertos.
+- **K10 (estiba)**: basado en la experiencia y, en parte, **basado en la acción** (habilidad de los operarios para cargar físicamente): el SBC **no** puede mejorar la habilidad física, sí el plan. ← Buen ejemplo de "cuello de botella: sí; ¿mejorable con el SBC?: no".
 
 ## AM-1 — Agentes (PENDIENTE)
 
@@ -557,8 +588,8 @@ SALIDA: plan de agrupación + instrucciones de embalaje para el almacén (T5) + 
 ## D. Sobre los activos de conocimiento (OM-4)
 - [ ] Para cada Kn: ¿por qué **ese** sí/no? ¿Sabríais explicarlo en una frase sin leer?
 - [ ] ¿Hay activos que **debieran separarse**? (K2 junta tres reglamentos; ¿preferís K2a/K2b/K2c por modo?)
-- [ ] ¿Hay activos que **debieran unirse**? (¿K9 y K11 son realmente distintos?)
-- [ ] ¿Quién **posee** K10: el técnico (que conoce las tablas) o tráfico (que lo aplica)? Lo he puesto en el técnico precisamente para generar el "Lugar: No"; ¿estáis de acuerdo?
+- [ ] ¿Hay activos que **debieran unirse**? (¿K8 y K10 son realmente distintos?)
+- [ ] ¿Quién **posee** K9: el técnico (que conoce las tablas) o tráfico (que lo aplica)? Lo he puesto en el técnico precisamente para generar el "Lugar: No"; ¿estáis de acuerdo?
 - [ ] ¿Hay conocimiento **basado en la acción** (habilidad física)? → la estiba manual. ¿Lo reflejamos en TM-2?
 
 ## E. Sobre la viabilidad (OM-5)
@@ -605,9 +636,12 @@ SALIDA: plan de agrupación + instrucciones de embalaje para el almacén (T5) + 
 | OM-2 | Técnico de MMPP = **consejero de seguridad** | Figura legal real; refuerza "responsabilidades" en AM-1 |
 | OM-2 | Recursos → "Tecnología, patentes" | Antes contenía contratos, que no son tecnología; añadidas las publicaciones normativas |
 | OM-3 | Nombres unificados con OM-2; "Apartamento" → "Mercancías peligrosas" | Coherencia (los agentes y los lugares deben coincidir con OM-2) |
-| OM-3 | Recursos K1–K13 con **(F)/(NF)** + leyenda | El enunciado exige distinguir lo formal de lo no formal; trazabilidad con OM-4 |
+| OM-3 | Recursos K1–K11 con **(F)/(NF)** + leyenda | El enunciado exige distinguir lo formal de lo no formal; trazabilidad con OM-4 |
 | OM-3 | **Criterio de importancia** definido; T7 → Alta | El enunciado pide un criterio definido por el ingeniero de conocimiento |
 | OM-3 | T4: "Resultados de las tareas previas" → K2, K3, K4, K6 | Un resultado es un objeto de entrada, no un recurso de conocimiento |
+| OM-3/OM-4/TM/AM (16/10) | Eliminados K8 (tarifas y plazos) y K13 (historial); K7 → pericia en embalaje; K12 → normas de cumplimentación; renumerado K1–K11 y comentarios 1–27; borrada la TM-2 de tarifas | Eran datos o información, no conocimiento |
+| Revisión final (16/10) | P5 redactado como problema; en OM-2 el responsable de tráfico aporta experiencia (no "costes y plazos", que son datos); T9 = Sí; OM-5 recupera el coste por etapa y la organización del proyecto; TM-1 indica la parte intensiva de cada tarea | El enunciado pide expresamente el coste por etapa, la organización del proyecto y la parte intensiva de cada tarea |
+| OM-5…final (16/10) | Resumido de 21 a 11 páginas (documento total: 35 → 25). OM-5 en prosa; TM-1 compactas; TM-2 con explicaciones de una línea (mismos 168 valores Sí/No, comprobados por script); eliminado el AM-1 del SBC; eliminadas en TM-1 y AM-1 las frases "con el SBC…" | El ejemplo de Horarios ocupa unas 20 páginas. El enunciado exige describir la situación **antes** del SBC, así que el SBC no puede ser todavía un agente de la organización ni las tareas describirse con él |
 | OM-4 | Redactado entero (13 activos, comentarios numerados) | Pendiente |
 | OM-5 | Redactado entero en forma narrativa, con costes, Gantt y acciones 1 y 2 | Pendiente |
 | LaTeX | OM-1 y OM-3 pasan de `table`+`tabularx` a `longtable`; `\raggedbottom` | OM-1 ya no cabía en una página (se salía) |

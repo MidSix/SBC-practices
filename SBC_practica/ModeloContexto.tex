@@ -99,16 +99,18 @@
 \HRule \\[0.5cm]
 \begin{center}
 % Letra lineal y negrita
-\textsf{\textbf{\large UN SISTEMA BASADO EN CONOCIMIENTO PARA \ldots(tema de la práctica)\\[0.75cm]
+\textsf{\textbf{\large UN SISTEMA BASADO EN CONOCIMIENTO\\[0.4cm]
+{\normalsize Sistema logístico de organización de paquetes y envío de estos mismos, atendiendo a las medidas de seguridad de estos y a las normativas que corresponden a cada país}\\[0.75cm]
 ANÁLISIS DE VIABILIDAD E IMPACTO. \\[0.25cm] MODELADO DEL CONTEXTO EN COMMONKADS \\[0.5cm]}}
 \HRule \vspace*{3cm}
 
-\textsf{\textbf{\normalsize [Nombres de los componentes del
-grupo]\\[5cm]
-Horario de prácticas:\\[2.5cm]
+\textsf{\textbf{\normalsize Álvaro Gómez García\\
+Sebastián David Moreno Expósito\\
+Sergio Pérez Vilar\\[4cm]
+Horario de prácticas: Martes\\[2.5cm]
 Sistemas basados en conocimiento\\
 Universidade da Coruña \\ Curso
-202X}}
+2026}}
 \end{center}
 \end{titlepage}
 
@@ -133,7 +135,7 @@ Universidade da Coruña \\ Curso
 
 %numeros arábigos
 \pagenumbering{arabic} \pagestyle{myheadings} \markboth{Grupo de
-prácticas: xxx}{Modelado Contextual en CommonKADS.}
+prácticas: Martes}{Modelado Contextual en CommonKADS.}
 
 %indentaciones y espaciado entre párrafos
 \setlength{\parindent}{1,5cm} \setlength{\parskip}{0,7cm}
@@ -161,15 +163,15 @@ Identificación de los problemas y oportunidades orientadas al conocimiento de l
     \item \textbf{P2.} Los errores de cumplimiento normativo (clasificación de la mercancía, documentación, restricciones del país de destino o del transportista) y de embalaje y etiquetado de los bultos provocan retenciones, rechazos por parte de los transportistas, sanciones y sobrecostes.
     \item \textbf{P3.} Ante dudas o problemas con paquetes poco habituales, la dependencia de los expertos para tratarlos retrasa la resolución del paquete.
     \item \textbf{P4.} Las normativas de gestión y envío de paquetes cambian constantemente y la empresa debe adaptarse a ellas.
-    \item \textbf{P5.} Elegir el modo de transporte más acertado para cada paquete en cuanto a velocidad de entrega, seguridad del paquete y costes.
+    \item \textbf{P5.} El modo de transporte de cada paquete se elige a criterio de quien decide, sin comparar de forma sistemática velocidad de entrega, seguridad y coste, por lo que no siempre es el más acertado.
     \item \textbf{P6.} La agrupación de los paquetes en un mismo envío (camión, contenedor o unidad de carga aérea) se decide de forma manual y con prisa: se desaprovecha espacio y existe el riesgo de cargar juntas mercancías incompatibles, como productos de limpieza corrosivos junto a alimentos o sustancias comburentes junto a inflamables. Además, una estiba deficiente puede provocar daños en la mercancía y las consiguientes reclamaciones de los clientes.
     \item \textbf{O1.} El crecimiento del comercio electrónico ha disparado los envíos que contienen mercancías peligrosas de uso cotidiano (baterías de litio, perfumes, aerosoles, productos de limpieza). Muchas empresas del sector los rechazan por precaución; poder aceptarlos de forma segura y conforme a la normativa permitiría a la empresa captar un segmento de clientes que hoy pierde.
     \item \textbf{O2.} El conocimiento de los expertos de la empresa, hoy sin documentar, puede convertirse en un activo propio, explícito y reutilizable, que no se pierda cuando un experto se jubila o abandona la empresa y que facilite la formación del personal temporal.
 \end{itemize} \\ \hline
 
 \textsc{Contexto Organizacional} &
+\textit{Brétema Logística} (empresa ficticia) es un operador logístico y transitario con sede en A Coruña y unos 60 empleados. Gestiona alrededor de 400 envíos diarios de empresas y tiendas en línea, con destino nacional e internacional: los recibe en su almacén, que cuenta con una zona separada para mercancías peligrosas, los prepara y agrupa con los de otros clientes, y contrata su transporte por carretera, mar y aire con transportistas, navieras y aerolíneas.
 \begin{enumerate}
-    \item \textbf{Perfil de la empresa:} operador logístico y transitario de tamaño medio con sede en Galicia, con unos 60 empleados, que gestiona alrededor de 400 envíos diarios de empresas y particulares con destino nacional e internacional. Contrata el transporte físico por carretera, mar y aire a transportistas, navieras y aerolíneas, y consolida (agrupa) los paquetes de distintos clientes en envíos compartidos.
     \item \textbf{Misión:} ofrecer a sus clientes envíos nacionales e internacionales seguros y conformes a la normativa, sin que ellos tengan que conocerla.
     \item \textbf{Visión:} ser la empresa de referencia a la que todo el mundo acude para enviar sus paquetes, y que estos lleguen siempre sin ninguna incidencia.
     \item \textbf{Objetivos:} reducir las retenciones e incidencias, acortar el tiempo de admisión de los paquetes, ampliar los destinos, cumplir siempre la normativa de mercancías peligrosas y optimizar la organización de los paquetes.
@@ -261,7 +263,7 @@ Descripción de los aspectos de la organización que tienen impacto y/o se ven a
     \item \textbf{Responsable de aduanas:} proveedor de conocimiento. Es el experto en la normativa aplicable a cada país de destino.
     \item \textbf{Operario de recepción y admisión:} demandante de conocimiento, ya que consulta a los expertos ante cualquier duda sobre un paquete.
     \item \textbf{Operario de almacén y embalaje:} destinatario del conocimiento, ya que recibe las instrucciones de embalaje y etiquetado.
-    \item \textbf{Responsable de tráfico:} demandante y proveedor de conocimiento. Necesita saber qué modos de transporte permite la normativa y aporta su propio conocimiento sobre costes y plazos.
+    \item \textbf{Responsable de tráfico:} demandante y proveedor de conocimiento. Necesita saber qué modos de transporte permite la normativa y aporta su experiencia en la elección del transporte y en la estiba de la carga.
     \item \textbf{Agente de atención al cliente:} demandante de conocimiento. Transmite las exigencias de los clientes e informa de las incidencias.
     \item \textbf{Director de operaciones:} destinatario de los resultados del proceso y responsable de la toma de decisiones.
 \end{itemize}
@@ -270,7 +272,7 @@ Descripción de los aspectos de la organización que tienen impacto y/o se ven a
 \subsubsection{Recursos}
 
 \begin{enumerate}
-    \item \textbf{Sistemas de información y otros recursos computacionales:} el programa de gestión de almacén y envíos, hojas de cálculo con tarifas y destinos, los portales telemáticos de aduanas y transportistas, y el software de impresión de etiquetas.
+    \item \textbf{Sistemas de información y otros recursos computacionales:} el programa de gestión de almacén y envíos (que guarda el historial de envíos e incidencias), hojas de cálculo con las tarifas, recargos y plazos de los transportistas, plantillas de los documentos de transporte y aduana, los portales telemáticos de aduanas y transportistas, y el software de impresión de etiquetas.
     \item \textbf{Equipamiento y material:} equipos de pesaje, medición e identificación de paquetes; materiales de embalaje y etiquetado, incluidos los homologados para mercancías peligrosas; medios de manipulación y transporte interno; e instalaciones de almacenamiento, con una zona separada para mercancías peligrosas.
     \item \textbf{Experiencia social o interpersonal:} el trato con los clientes y la relación de confianza con transportistas y agentes de aduanas.
     \item \textbf{Tecnología, patentes, etc.:} la empresa no dispone de patentes ni de tecnología propia. Cuenta con contratos y acuerdos con los transportistas de cada modo de transporte y con las ediciones vigentes de las publicaciones normativas de referencia (reglamentos de mercancías peligrosas por carretera, mar y aire), en papel y en PDF.
@@ -314,15 +316,15 @@ Cono\-ci\-mien\-to?} & \textsc{Im\-por\-tan\-cia} \\ \hline
 2 & Evaluación de la seguridad del contenido & Operario de recepción y admisión y técnico de mercancías peligrosas & Recepción y admisión / Mercancías peligrosas & K2. Normativa de mercancías peligrosas (F) \newline K3. Experiencia en identificación y clasificación de mercancías peligrosas (NF) & Sí & Alta \\ \hline
 3 & Evaluación de la normativa del país de destino & Responsable de aduanas & Aduanas & K4. Normativa aduanera y restricciones de cada país (F) \newline K5. Experiencia en tramitación aduanera y resolución de retenciones (NF) & Sí & Alta \\ \hline
 4 & Decisión de admisión & Operario de recepción y admisión, con los expertos en los casos dudosos & Recepción y admisión & K2, K3, K4 \newline K6. Criterios de admisión de la empresa y restricciones de los transportistas (F, escritos solo en parte) & Sí & Alta \\ \hline
-5 & Embalaje y etiquetado & Operario de almacén y embalaje & Almacén y embalaje & K7. Instrucciones de embalaje y etiquetado (F) & No & Media \\ \hline
-6 & Selección del modo de transporte & Responsable de tráfico & Tráfico y expedición & K2, K6 \newline K8. Tarifas, plazos y condiciones de los transportistas (F) \newline K9. Experiencia en la selección del modo de transporte (NF) & Sí & Alta \\ \hline
-7 & Agrupación de paquetes en envíos & Responsable de tráfico & Tráfico y expedición & K10. Reglas de compatibilidad y segregación entre mercancías (F, con criterios internos NF) \newline K11. Experiencia en consolidación y estiba de la carga (NF) & Sí & Alta \\ \hline
-8 & Documentación & Responsable de tráfico y responsable de aduanas & Tráfico y expedición / Aduanas & K12. Modelos de documentos de transporte y aduana (F) & No & Media \\ \hline
-9 & Seguimiento y gestión de incidencias & Agente de atención al cliente y responsable de aduanas & Atención al cliente / Aduanas & K5 \newline K13. Historial de envíos e incidencias (F) & Par\-cial\-men\-te & Media \\ \hline
+5 & Embalaje y etiquetado & Operario de almacén y embalaje & Almacén y embalaje & K7. Pericia en embalaje y etiquetado de bultos (NF) & No & Media \\ \hline
+6 & Selección del modo de transporte & Responsable de tráfico & Tráfico y expedición & K2, K6 \newline K8. Experiencia en la selección del modo de transporte (NF) & Sí & Alta \\ \hline
+7 & Agrupación de paquetes en envíos & Responsable de tráfico & Tráfico y expedición & K9. Reglas de compatibilidad y segregación entre mercancías (F, con criterios internos NF) \newline K10. Experiencia en consolidación y estiba de la carga (NF) & Sí & Alta \\ \hline
+8 & Documentación & Responsable de tráfico y responsable de aduanas & Tráfico y expedición / Aduanas & K11. Normas de cumplimentación de los documentos de transporte y aduana (F) & No & Media \\ \hline
+9 & Seguimiento y gestión de incidencias & Agente de atención al cliente y responsable de aduanas & Atención al cliente / Aduanas & K5 & Sí & Media \\ \hline
 \end{longtable}
 }
 
-\noindent\textbf{Recursos de conocimiento.} (F) indica un recurso formal, es decir, explícito y escrito (normativa, procedimientos, tablas); (NF) indica un recurso no formal, es decir, tácito y basado en la experiencia de las personas. El código Kn identifica cada recurso, que se detalla en el formulario OM-4.
+\noindent\textbf{Recursos de conocimiento.} (F) indica un recurso formal, es decir, explícito y escrito (normativa, procedimientos, tablas); (NF) indica un recurso no formal, es decir, tácito y basado en la experiencia de las personas. El código Kn identifica cada recurso, que se detalla en el formulario OM-4. Solo se consideran recursos de conocimiento los que permiten interpretar, decidir o actuar; los datos que manejan las tareas (tarifas, plazos, historial de envíos, plantillas de documentos o las instrucciones que recibe cada tarea) son información y figuran como recursos en OM-2 y como objetos manipulados en TM-1.
 
 \noindent\textbf{Criterio de importancia.} \textit{Alta}: un error en la tarea puede provocar un incidente de seguridad, una sanción o la retención del envío. \textit{Media}: un error provoca retrasos o sobrecostes, pero no compromete la seguridad. \textit{Baja}: los errores se detectan y corrigen fácilmente en las tareas siguientes.
 
@@ -346,13 +348,11 @@ K3. Experiencia en identificación y clasificación de mercancías peligrosas & 
 K4. Normativa aduanera y restricciones de cada país & Responsable de aduanas & T3, T4 & No (9) & No (10) & No (11) & No (12) \\ \hline
 K5. Experiencia en tramitación aduanera y resolución de retenciones & Responsable de aduanas & T3, T9 & No (13) & Sí & No (14) & Sí \\ \hline
 K6. Criterios de admisión de la empresa y restricciones de los transportistas & Director de operaciones y técnico de mercancías peligrosas & T4, T6 & No (15) & Sí & No (16) & No (17) \\ \hline
-K7. Instrucciones de embalaje y etiquetado & Técnico de mercancías peligrosas & T5 & No (18) & Sí & No (19) & Sí \\ \hline
-K8. Tarifas, plazos y condiciones de los transportistas & Responsable de tráfico & T6 & Sí (20) & Sí & No (21) & No (22) \\ \hline
-K9. Experiencia en la selección del modo de transporte & Responsable de tráfico & T6 & No (23) & Sí & No (24) & No (25) \\ \hline
-K10. Reglas de compatibilidad y segregación entre mercancías & Técnico de mercancías peligrosas & T7 & No (26) & No (27) & No (28) & No (29) \\ \hline
-K11. Experiencia en consolidación y estiba de la carga & Responsable de tráfico & T7 & No (30) & Sí & Sí & No (31) \\ \hline
-K12. Modelos de documentos de transporte y aduana & Responsable de tráfico y responsable de aduanas & T8 & Sí & Sí & Sí & Sí \\ \hline
-K13. Historial de envíos e incidencias & Agente de atención al cliente & T9 & No (32) & No (33) & Sí & No (34) \\ \hline
+K7. Pericia en embalaje y etiquetado de bultos & Operario de almacén y embalaje & T5 & Sí & Sí & Sí & No (18) \\ \hline
+K8. Experiencia en la selección del modo de transporte & Responsable de tráfico & T6 & No (19) & Sí & No (20) & No (21) \\ \hline
+K9. Reglas de compatibilidad y segregación entre mercancías & Técnico de mercancías peligrosas & T7 & No (22) & No (23) & No (24) & No (25) \\ \hline
+K10. Experiencia en consolidación y estiba de la carga & Responsable de tráfico & T7 & No (26) & Sí & Sí & No (27) \\ \hline
+K11. Normas de cumplimentación de los documentos de transporte y aduana & Responsable de tráfico y responsable de aduanas & T8 & Sí & Sí & Sí & Sí \\ \hline
 \end{tabularx}
   \label{tab.OM4}
 \end{table}
@@ -388,34 +388,23 @@ K13. Historial de envíos e incidencias & Agente de atención al cliente & T9 & 
     \item[(16)] Las aerolíneas y navieras cambian sus propias restricciones con frecuencia, y el procedimiento interno no se actualiza al mismo ritmo.
     \item[(17)] El procedimiento es incompleto y ambiguo: no cubre los casos dudosos, que se acaban resolviendo consultando a un experto.
 
-    \item[] \textbf{K7. Instrucciones de embalaje y etiquetado}
-    \item[(18)] El técnico las transmite de palabra o en notas en papel, sin un formato homogéneo, lo que puede introducir errores al transcribirlas.
-    \item[(19)] Dependen de que el técnico tenga tiempo de redactarlas, por lo que a veces llegan tarde al almacén y retrasan el embalaje.
+    \item[] \textbf{K7. Pericia en embalaje y etiquetado de bultos}
+    \item[(18)] En temporada alta buena parte del almacén lo cubre personal temporal sin esta pericia, lo que aumenta los errores de embalaje y etiquetado (OM-2, ``Cultura y potencial''). No es un cuello de botella que pueda resolver el SBC, porque es una habilidad práctica; se aborda con formación y con instrucciones más claras en cada bulto.
 
-    \item[] \textbf{K8. Tarifas, plazos y condiciones de los transportistas}
-    \item[(20)] Están en formato electrónico, aunque en hojas de cálculo que no están integradas en el programa de gestión de envíos.
-    \item[(21)] Se actualizan a mano, mientras que los recargos (combustible, temporada alta) cambian con frecuencia.
-    \item[(22)] Conviven varias versiones de las hojas y no siempre se consulta la vigente.
+    \item[] \textbf{K8. Experiencia en la selección del modo de transporte}
+    \item[(19)] Es conocimiento tácito: el responsable de tráfico equilibra plazo, coste y seguridad ``a criterio'', sin reglas escritas.
+    \item[(20)] La decisión suele tomarse con prisa, poco antes del cierre de admisión de un vuelo, un buque o una ruta de camión.
+    \item[(21)] Por inercia se tiende a repetir el transportista habitual aunque no sea la mejor opción, y el criterio varía según quién decida.
 
-    \item[] \textbf{K9. Experiencia en la selección del modo de transporte}
-    \item[(23)] Es conocimiento tácito: el responsable de tráfico equilibra plazo, coste y seguridad ``a criterio'', sin reglas escritas.
-    \item[(24)] La decisión suele tomarse con prisa, poco antes del cierre de admisión de un vuelo, un buque o una ruta de camión.
-    \item[(25)] Por inercia se tiende a repetir el transportista habitual aunque no sea la mejor opción, y el criterio varía según quién decida.
+    \item[] \textbf{K9. Reglas de compatibilidad y segregación entre mercancías}
+    \item[(22)] Las tablas de segregación de mercancías peligrosas son distintas para cada modo de transporte y están dentro de los manuales. Los criterios internos para mercancías no clasificadas como peligrosas pero incompatibles entre sí (productos de limpieza y alimentos, mercancías que desprenden olores, etc.) no están escritos.
+    \item[(23)] Quien conoce las tablas es el técnico de mercancías peligrosas, pero la agrupación la decide el responsable de tráfico.
+    \item[(24)] La agrupación se cierra con prisa y no hay tiempo para consultar las tablas ni al técnico.
+    \item[(25)] Los criterios internos son incompletos y no se aplican de forma sistemática, por lo que existe el riesgo de agrupar mercancías incompatibles (problema P6).
 
-    \item[] \textbf{K10. Reglas de compatibilidad y segregación entre mercancías}
-    \item[(26)] Las tablas de segregación de mercancías peligrosas son distintas para cada modo de transporte y están dentro de los manuales. Los criterios internos para mercancías no clasificadas como peligrosas pero incompatibles entre sí (productos de limpieza y alimentos, mercancías que desprenden olores, etc.) no están escritos.
-    \item[(27)] Quien conoce las tablas es el técnico de mercancías peligrosas, pero la agrupación la decide el responsable de tráfico.
-    \item[(28)] La agrupación se cierra con prisa y no hay tiempo para consultar las tablas ni al técnico.
-    \item[(29)] Los criterios internos son incompletos y no se aplican de forma sistemática, por lo que existe el riesgo de agrupar mercancías incompatibles (problema P6).
-
-    \item[] \textbf{K11. Experiencia en consolidación y estiba de la carga}
-    \item[(30)] Es conocimiento tácito: el reparto de los paquetes en cada unidad de carga se hace ``a ojo'', según la experiencia de cada persona.
-    \item[(31)] No se calcula la ocupación de cada envío, quedan huecos y en ocasiones hace falta contratar más espacio del necesario.
-
-    \item[] \textbf{K13. Historial de envíos e incidencias}
-    \item[(32)] Las incidencias se registran como texto libre, sin causas codificadas, lo que impide analizarlas.
-    \item[(33)] La información está repartida entre el programa de gestión de envíos y el correo electrónico de atención al cliente.
-    \item[(34)] Al no registrarse la causa de cada incidencia de forma estructurada, la empresa no puede aprender de los errores pasados.
+    \item[] \textbf{K10. Experiencia en consolidación y estiba de la carga}
+    \item[(26)] Es conocimiento tácito: el reparto de los paquetes en cada unidad de carga se hace ``a ojo'', según la experiencia de cada persona.
+    \item[(27)] No se calcula la ocupación de cada envío, quedan huecos y en ocasiones hace falta contratar más espacio del necesario.
 \end{itemize}
 }
 
@@ -423,201 +412,456 @@ K13. Historial de envíos e incidencias & Agente de atención al cliente & T9 & 
 \pagebreak
 \subsection{Formulario OM-5: Análisis de viabilidad.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parskip}{0.25cm}
 
-Documento de viabilidad de la solución propuesta en OM-1: un SBC de apoyo a la admisión, preparación y agrupación de los envíos con requisitos especiales (mercancías peligrosas o incompatibles entre sí). Se indica en cada caso a qué problemas (P1--P6) y oportunidades (O1, O2) de OM-1 da respuesta.
+Viabilidad de la única solución propuesta en OM-1: un SBC de apoyo a la admisión, preparación y agrupación de los envíos con mercancías peligrosas o incompatibles.
 
-% Cada fila de la tabla debe caber en una página (longtable solo corta entre filas),
-% por eso cada bloque se reparte en varias filas sin línea horizontal entre ellas.
-{\footnotesize
-\begin{longtable}{|>{\raggedright\arraybackslash}p{2.8cm}|p{12.6cm}|} \hline
-\textbf{Modelo de Organización} & \textbf{Formulario OM-5: Análisis de viabilidad} \\ \hline\hline
-\endhead
-\hline
-\endfoot
-\endlastfoot
+\subsubsection{Viabilidad empresarial}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VIABILIDAD EMPRESARIAL
-\textsc{Viabilidad Empresarial} &
-\textbf{Beneficios esperados.} Los beneficios \textit{tangibles} proceden de tres fuentes: la reducción de las consultas a los expertos (P1, P3), porque el SBC resuelve los casos habituales y el técnico de mercancías peligrosas y el responsable de aduanas solo intervienen en los excepcionales; la reducción de las retenciones, devoluciones y sanciones por errores de cumplimiento (P2, P4), porque el SBC fija desde la admisión los requisitos de embalaje, etiquetado y documentación y las restricciones del destino; y el mejor aprovechamiento del espacio en los envíos consolidados (P6). Los \textit{intangibles} son igual de importantes: refuerza la imagen de fiabilidad y cumplimiento normativo, que es el eje de la estrategia de la empresa (OM-1); permite aceptar con seguridad envíos con mercancías peligrosas de uso cotidiano que hoy se rechazan (O1); conserva el conocimiento experto, que deja de depender de personas concretas (O2); y hace que las decisiones sean homogéneas y trazables, porque el SBC explica por qué decide lo que decide, lo que facilita las auditorías y la formación del personal temporal. \\
+El SBC ahorra consultas a los expertos (P1, P3), reduce las retenciones y sanciones por errores de cumplimiento (P2, P4) y aprovecha mejor el espacio de los envíos agrupados (P6). Además, refuerza la imagen de fiabilidad de la empresa, le permite aceptar mercancías peligrosas de uso cotidiano (O1) y conserva el conocimiento de sus expertos (O2).
 
-& \textbf{Valor añadido esperado.} Se parte de unas hipótesis sobre la actividad de la empresa que deberán contrastarse con sus datos reales: unos 100.000 envíos al año (400 diarios durante 250 días laborables); un 5\,\% de ellos requiere hoy consultar a un experto, con un coste aproximado de 12 euros por consulta (20 minutos del técnico y 10 minutos de espera del operario); un 0,5\,\% sufre una retención o devolución por errores de cumplimiento, con un coste medio de unos 150 euros; y el gasto anual en fletes de los envíos consolidados es de unos 2 millones de euros. Si el SBC resuelve el 60\,\% de las consultas, reduce a la mitad los errores de cumplimiento y mejora un 1,5\,\% el aprovechamiento del espacio, el ahorro anual es de unos 104.000 euros. Incluso en un escenario conservador, con la mitad de ese ahorro, el valor añadido supera con holgura el coste de mantenimiento del sistema.
-\par\smallskip
-{\centering\setlength{\tabcolsep}{3pt}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{7.4cm}|r|r|} \hline
-\textbf{Fuente de ahorro anual} & \textbf{Previsto} & \textbf{Conservador} \\ \hline
-Consultas evitadas (3.000 $\times$ 12,25 \texteuro) & 36.750 \texteuro & 18.375 \texteuro \\ \hline
-Retenciones y devoluciones (250 $\times$ 150 \texteuro) & 37.500 \texteuro & 18.750 \texteuro \\ \hline
-Aprovechamiento del espacio (1,5\,\% de 2 M\texteuro) & 30.000 \texteuro & 15.000 \texteuro \\ \hline
-\textbf{Total} & \textbf{104.250 \texteuro} & \textbf{52.125 \texteuro} \\ \hline
-\end{tabular}\par} \\[3pt]
+Para estimar el valor añadido se parte de cuatro hipótesis sobre la actividad de la empresa: 100.000 envíos al año; un 5\,\% de ellos requiere consultar a un experto, a unos 12 euros por consulta; un 0,5\,\% sufre una retención o devolución, a unos 150 euros cada una; y se gastan 2 millones de euros anuales en fletes de los envíos agrupados. Si el SBC resuelve el 60\,\% de las consultas, reduce a la mitad las retenciones y mejora un 1,5\,\% la ocupación, ahorra unos 36.750 euros en consultas, 37.500 en retenciones y 30.000 en fletes, es decir, unos \textbf{104.000 euros al año}. En un escenario conservador se logra solo la mitad: unos 52.000 euros.
 
-& \textbf{Coste esperado.} Para el análisis de costes se suponen las etapas en cascada. El coste por hora se calcula a partir de salarios brutos anuales de referencia en España en 2026 (45.000 euros para el ingeniero de conocimiento, 48.000 para el programador sénior y 26.000 para el júnior), más un 32\,\% de cotizaciones a cargo de la empresa, repartido entre 1.760 horas laborables al año: 33,75, 36,00 y 19,50 euros por hora, respectivamente. La etapa más larga es el modelado conceptual, porque incluye la extracción del conocimiento de los expertos (entrevistas y análisis de casos reales) y su formalización. La tabla recoge la duración de cada etapa y las horas de cada perfil, con jornadas de 40 horas semanales.
-\par\smallskip
-{\centering\setlength{\tabcolsep}{3pt}
-\begin{tabular}{|l|c|r|r|r|r|} \hline
-\textbf{Etapa} & \textbf{Semanas} & \multicolumn{3}{c|}{\textbf{Horas por perfil}} & \textbf{Coste} \\ \cline{3-5}
- & & \textbf{Ing. conoc.} & \textbf{Sénior} & \textbf{Júnior} & \\ \hline
-Análisis del contexto & 3  & 120 & --  & --  & 4.050 \texteuro \\ \hline
-Modelado conceptual   & 10 & 400 & 100 & --  & 17.100 \texteuro \\ \hline
-Diseño del software   & 4  & 80  & 160 & 40  & 9.240 \texteuro \\ \hline
-Implementación        & 10 & 100 & 400 & 400 & 25.575 \texteuro \\ \hline
-Pruebas               & 5  & 100 & 100 & 200 & 10.875 \texteuro \\ \hline
-\textbf{Total}        & \textbf{32} & \textbf{800} & \textbf{760} & \textbf{640} & \textbf{66.840 \texteuro} \\ \hline
-\end{tabular}\par}
-\smallskip
-Al coste de personal se suman el tiempo de los expertos de la empresa (unos 4.700 euros: 180 horas del técnico de mercancías peligrosas, del responsable de aduanas, del responsable de tráfico y de los operarios que actuarán como usuarios de prueba; no es un gasto nuevo, sino un coste de oportunidad), las publicaciones normativas y los datos en formato electrónico (unos 2.000 euros, porque los reglamentos marítimo y aéreo son de pago), la infraestructura de desarrollo y pruebas (unos 1.000 euros), la formación de los usuarios (unos 1.000 euros) y un margen de contingencia del 10\,\%. El coste total estimado es de unos \textbf{83.100 euros}, más un mantenimiento de unos 6.000 euros al año para actualizar la base de conocimiento con cada edición de los reglamentos y renovar las licencias de los datos normativos. Con el ahorro estimado, la inversión se recupera en menos de un año en el escenario previsto y en menos de dos en el conservador. \\
+El coste se calcula con las etapas en cascada, 32 semanas en total: análisis del contexto (3 semanas, 4.050 euros), modelado conceptual (10 semanas, 17.100 euros; es la etapa más larga porque incluye la extracción del conocimiento), diseño (4 semanas, 9.240 euros), implementación (10 semanas, 25.575 euros) y pruebas (5 semanas, 10.875 euros). Intervienen tres perfiles, cuyo coste por hora sale de su salario bruto de referencia en España en 2026 más un 32\,\% de cotizaciones, repartido en 1.760 horas al año: un ingeniero de conocimiento (800 horas a 33,75 euros), un programador sénior (760 horas a 36 euros) y un programador júnior (640 horas a 19,50 euros). El personal suma 66.840 euros. A ello se añaden unos 8.700 euros de otros recursos (tiempo de los expertos, publicaciones normativas, infraestructura y formación) y un 10\,\% de contingencia. La \textbf{inversión total es de unos 83.100 euros}, más un mantenimiento de unos 6.000 euros anuales para actualizar la base de conocimiento.
 
-& \textbf{Comparación con soluciones alternativas.} \textit{Contratar más expertos} reduciría las esperas, pero supone unos 50.000 euros anuales por persona, no resuelve la falta de homogeneidad entre expertos y el conocimiento seguiría siendo tácito. El \textit{software comercial} existente (validadores de la declaración de mercancías peligrosas para el transporte aéreo, comprobadores de segregación para el marítimo y planificadores de carga) cubre cada uno un solo modo de transporte o un solo aspecto, no está integrado, no incorpora los criterios propios de la empresa (K6 y los criterios internos de K10) y supone licencias anuales. Las \textit{listas de comprobación manuales} son baratas, pero no resuelven los casos dudosos, que son los que generan las esperas. Un \textit{asistente basado únicamente en un modelo de lenguaje generalista} no garantiza que sus respuestas se ajusten a la normativa, puede inventar requisitos y no ofrece una justificación trazable, algo inaceptable cuando un error compromete la seguridad. El SBC es la única alternativa que integra el conocimiento normativo y el propio de la empresa, cubre los tres modos de transporte y explica sus decisiones. \\
-
-& \textbf{Cambios organizacionales.} El técnico de mercancías peligrosas y el responsable de aduanas pasan de resolver caso por caso a atender solo las excepciones, validar las decisiones críticas y mantener al día la base de conocimiento, para lo que se crea un procedimiento de actualización ligado a cada nueva edición de los reglamentos y a los cambios de restricciones de los transportistas. El operario de recepción asume una tarea nueva: registrar los datos del paquete de forma estructurada (descripción del contenido, cantidades, ficha de datos de seguridad cuando exista), de lo que depende el buen funcionamiento del SBC. Hay que formar al personal en el uso del sistema y en la interpretación de sus explicaciones. La responsabilidad legal no cambia: el SBC recomienda, pero las decisiones sobre mercancías peligrosas las sigue validando y firmando el personal cualificado, y la empresa sigue contando con su consejero de seguridad. \\
-
-& \textbf{Riesgos e incertidumbres.} El riesgo principal es que un error del SBC provoque un incidente de seguridad o una sanción. Se mitiga con un diseño conservador: ante cualquier duda el sistema no admite ni agrupa, sino que remite el caso al experto, y las decisiones sobre mercancías peligrosas siempre las valida una persona. Además, el SBC depende de los datos que declara el cliente: puede señalar descripciones sospechosas, pero no detectar una mercancía peligrosa ocultada deliberadamente. Por último, su valor depende de que se mantenga actualizado frente a los cambios de la normativa. \\ \hline
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VIABILIDAD TÉCNICA
-\textsc{Viabilidad Técnica} &
-\textbf{Complejidad de la tarea.} El SBC combina dos tipos de tarea intensiva en conocimiento: una \textit{valoración} de cada paquete (T2, T3, T4), que determina si contiene mercancías peligrosas, cómo se clasifican, si el envío es admisible hacia su destino y en qué condiciones; y una \textit{asignación} de los paquetes admitidos a unidades de carga (T6, T7), respetando la segregación entre mercancías incompatibles y las capacidades de peso y volumen. Gran parte del conocimiento es formal y muy estructurado (listas de mercancías con su número ONU, clase y grupo de embalaje, instrucciones de embalaje, tablas de segregación), lo que se presta a una representación mediante reglas y tablas de decisión. La parte heurística (reconocer mercancías peligrosas no declaradas, criterios internos de compatibilidad, criterios de estiba) debe extraerse de los expertos. Ambos tipos de tarea cuentan con métodos de resolución conocidos y con plantillas en la biblioteca de CommonKADS. Para contener la complejidad, la primera versión se limitará a las mercancías peligrosas más frecuentes (baterías de litio, perfumes, aerosoles, pinturas, productos de limpieza corrosivos, etc.) y a los principales países de destino, y el reparto en el espacio, que es un problema combinatorio, se resolverá con heurísticas que den soluciones buenas en un tiempo razonable, sin garantizar la óptima. \\
-
-& \textbf{Aspectos críticos.} En cuanto al \textit{tiempo}, la respuesta en recepción debe llegar en segundos para no frenar la admisión. En cuanto a la \textit{calidad}, el error crítico es admitir o agrupar algo que no se debería: un falso ``admisible'' es mucho más grave que remitir al experto un caso que el sistema podría haber resuelto. Por eso las reglas de seguridad son restricciones que nunca pueden incumplirse, y la ocupación solo se optimiza entre las soluciones que las cumplen todas, de modo que el sistema no pueda ``mejorarla'' juntando mercancías incompatibles. En cuanto a los \textit{recursos}, el factor crítico es la disponibilidad de los expertos durante la extracción de conocimiento, por lo que se acordará con ellos un calendario fijo de sesiones. \\
-
-& \textbf{Criterios de éxito y validación.} Se acordarán con la dirección antes de empezar el desarrollo:
+\textbf{¿Es rentable?} Descontando el mantenimiento, el beneficio neto es de unos 98.250 euros al año en el escenario previsto y de unos 46.125 en el conservador, así que la inversión se recupera en unos 10 y 22 meses, respectivamente. Hay dos comprobaciones más exigentes:
 \begin{itemize}\setlength{\itemsep}{0pt}
-    \item Coincidencia de al menos el 95\,\% con la decisión de los expertos en un conjunto de prueba de al menos 200 casos, históricos y límite.
-    \item Ningún caso de prueba en el que el sistema admita un envío que los expertos rechazan por seguridad, y ninguna agrupación incompatible.
-    \item Reducción de al menos un 50\,\% en las consultas a los expertos y tiempo de admisión de un paquete con mercancía peligrosa inferior a 5 minutos.
-    \item Mejora de la ocupación respecto a los planes de carga reales del último año, comparada sobre los mismos datos.
+    \item \textit{Contar solo el ahorro en dinero.} El ahorro en consultas es tiempo de los expertos que queda libre, no dinero que deje de pagarse. Si se excluye y se toma el escenario conservador, queda un ahorro neto de unos 27.750 euros al año, y la inversión se recupera en unos 3 años.
+    \item \textit{Calcular el umbral de rentabilidad.} Para recuperar la inversión en 3 años basta con ahorrar unos 33.700 euros al año (83.100 / 3 + 6.000), un tercio del ahorro previsto.
 \end{itemize}
-Además, los expertos revisarán las explicaciones del sistema para comprobar que el razonamiento es correcto, y no solo la conclusión. \\
+Por tanto, \textbf{el proyecto es rentable incluso si los resultados son bastante peores de lo previsto}. Las hipótesis que más pesan, y que antes habría que validar con datos reales, son el ahorro en retenciones y el ahorro en fletes.
 
-& \textbf{Interfaces e interacción con otros sistemas.} Las interfaces son de complejidad moderada: en recepción, un formulario con los datos del paquete y una pantalla con la decisión, las condiciones de embalaje y etiquetado y su justificación; en tráfico, una propuesta de agrupación por unidad de carga que el responsable pueda revisar y modificar. Deben ser sencillas, porque las usará también el personal temporal. El SBC obtiene los datos de los paquetes del programa de gestión de almacén y envíos, le devuelve sus decisiones e importa los datos normativos y las tarifas de los transportistas. Para reducir el riesgo, la primera versión intercambiará la información mediante ficheros, y la integración directa con el programa de gestión y con los portales de transportistas y aduanas se abordará más adelante. Son técnicas de desarrollo e integración habituales. \\
+Ninguna alternativa ofrece un resultado mejor: contratar otro experto cuesta unos 50.000 euros cada año y deja el conocimiento tácito; el software comercial cubre un solo modo de transporte o un solo aspecto y no incluye los criterios propios de la empresa; las listas de comprobación no resuelven los casos dudosos; y un modelo de lenguaje generalista no ofrece justificaciones trazables.
 
-& \textbf{Riesgos tecnológicos.} El principal es el mantenimiento de la base de conocimiento: si no se actualiza, el sistema queda obsoleto y pasa a ser peligroso. Por eso estará separada del motor de razonamiento y registrará la edición de la normativa de la que procede cada regla. También puede ocurrir que no se obtengan en formato electrónico los datos de todos los reglamentos, en cuyo caso habría que introducirlos a mano para el subconjunto de mercancías elegido. \\ \hline
+La adopción del SBC exige tres cambios organizativos: los expertos pasan a atender las excepciones y a mantener la base de conocimiento, recepción registra los datos de cada paquete de forma estructurada y hay que formar al personal en el uso del sistema. La responsabilidad legal no cambia: el personal cualificado sigue validando las decisiones sobre mercancías peligrosas. El principal riesgo es que un error del sistema cause un incidente de seguridad; se mitiga con un diseño conservador, en el que ante la duda el sistema remite el caso al experto.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VIABILIDAD DEL PROYECTO
-\textsc{Viabilidad del Proyecto} &
-\textbf{Compromiso del personal.} La dirección está comprometida, porque el proyecto se alinea con su estrategia de fiabilidad y cumplimiento normativo. Los operarios y el responsable de tráfico lo reciben positivamente, ya que reduce sus esperas y su incertidumbre. El punto débil son los expertos, que pueden ver el SBC como una amenaza para su puesto (OM-2, ``Cultura y potencial''). Para ganarse su compromiso se les implicará desde el principio como coautores de la base de conocimiento, y se dejará claro que el sistema les libera de las consultas rutinarias, no los sustituye, y que siguen siendo responsables de las decisiones críticas. \\
+\subsubsection{Viabilidad técnica}
 
-& \textbf{Recursos y disponibilidad del conocimiento.} El presupuesto es asumible para una empresa de este tamaño a la vista del ahorro esperado, y el plazo de unos ocho meses es razonable. La principal limitación es el tiempo de los expertos: se reservarán de 3 a 4 horas semanales de cada uno durante el modelado conceptual, evitando la temporada alta. La parte formal del conocimiento está disponible en los reglamentos oficiales y en la documentación de aduanas y transportistas; la tácita está en la mente de los expertos de la empresa, que están dispuestos a colaborar, y se extraerá mediante entrevistas, el análisis de casos reales y la revisión del historial de incidencias. Las capacidades técnicas necesarias se cubren con los tres perfiles del equipo. \\
+El SBC combina una \textit{valoración} de cada paquete (T2, T3, T4) y una \textit{asignación} de paquetes a unidades de carga (T6, T7). Ambas tareas tienen métodos conocidos y plantillas en CommonKADS. La mayor parte del conocimiento es formal y está muy estructurado en los reglamentos, por lo que se puede representar con reglas y tablas; la parte heurística se extraerá de los expertos.
 
-& \textbf{Expectativas y organización del proyecto.} Se acordará con la dirección que el SBC es una herramienta de apoyo y no sustituye a los expertos. La primera versión no cubrirá todas las mercancías peligrosas ni todos los países, no detectará mercancías ocultadas deliberadamente por el cliente y la agrupación que proponga será buena, pero no necesariamente la óptima. El ingeniero de conocimiento dirigirá el proyecto y el director de operaciones actuará como responsable por parte de la empresa, con reuniones semanales de seguimiento y sesiones periódicas de validación con los expertos. El departamento de Desarrollo colaborará en la integración con los sistemas existentes, y se informará a los transportistas habituales de los cambios en el procedimiento de admisión. \\
+Para acotar la complejidad, la primera versión cubrirá las mercancías peligrosas más frecuentes y los principales destinos, y resolverá el reparto en el espacio con heurísticas. Hay dos aspectos críticos. El primero es el tiempo de respuesta, que debe ser de segundos. El segundo es la seguridad: admitir o agrupar algo indebidamente es el peor error, por lo que las reglas de seguridad son restricciones que nunca se incumplen, y la ocupación solo se optimiza entre las soluciones que las respetan.
 
-& \textbf{Riesgos adicionales.} La \textit{salida de un experto} durante el proyecto se mitiga documentando cada sesión de extracción y validando el conocimiento con más de un experto cuando sea posible. Los \textit{cambios normativos durante el desarrollo} están previstos (una nueva edición del reglamento de carretera entra en vigor el 1 de enero de 2027 y el aéreo se publica cada año) y se mitigan con el diseño versionado de la base de conocimiento. El \textit{crecimiento descontrolado del alcance} se evita fijando aquí el alcance de la primera versión y dejando las ampliaciones para las siguientes vueltas de la espiral. \\ \hline
+El éxito se medirá con cuatro criterios: al menos un 95\,\% de coincidencia con los expertos en 200 casos de prueba, ningún envío admitido que los expertos rechazarían por seguridad, la mitad de consultas a los expertos y menos de 5 minutos por admisión. Las interfaces son sencillas (un formulario en recepción y una propuesta de agrupación editable en tráfico), y en la primera versión los datos se intercambiarán con el programa de gestión mediante ficheros. El principal riesgo técnico es que la base de conocimiento quede desactualizada; por eso estará separada del razonamiento y registrará la edición de la normativa de la que procede cada regla.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ACCIONES PROPUESTAS
-\textsc{Acciones Propuestas} &
-\textbf{Área de actuación recomendada.} Se recomienda actuar sobre la \textbf{admisión y preparación para el transporte de los envíos con requisitos especiales}, es decir, los que contienen mercancías peligrosas o incompatibles entre sí. Esta área concentra los problemas de mayor importancia (P1, P2, P3 y P6), es donde el conocimiento es un cuello de botella más claro (OM-4: K2, K3, K4, K10) y permite aprovechar las oportunidades O1 y O2. El problema P4 queda cubierto por el propio diseño del sistema, con la base de conocimiento separada y actualizable, y el P5 se aborda en parte. \\
+\subsubsection{Viabilidad del proyecto}
 
-& \textbf{Solución recomendada y tareas que deben automatizarse.} Se recomienda desarrollar un SBC de apoyo a la decisión con dos módulos:
-\begin{itemize}\setlength{\itemsep}{0pt}
-    \item \textbf{Módulo de admisión}, que automatiza las tareas \textbf{T2} (evaluación de la seguridad del contenido), \textbf{T3} (evaluación de la normativa del país de destino) y \textbf{T4} (decisión de admisión). A partir de los datos del paquete, su origen y su destino, determina si contiene mercancías peligrosas, cómo se clasifican, si el envío es admisible y en qué condiciones (embalaje, etiquetado y modos de transporte permitidos), y justifica su decisión. Los casos dudosos se remiten al experto.
-    \item \textbf{Módulo de agrupación}, que automatiza la tarea \textbf{T7} (agrupación de paquetes en envíos) y en parte la \textbf{T6} (selección del modo de transporte): descarta los modos que la normativa no permite y ordena los restantes por plazo y coste, pero la elección final la mantiene el responsable de tráfico. Después propone qué paquetes pueden viajar juntos en cada unidad de carga, respetando la segregación y las capacidades y aprovechando el espacio.
-\end{itemize}
-Las tareas T1 (recepción y registro), T5 (embalaje y etiquetado) y T8 (documentación) no son intensivas en conocimiento, por lo que no las realizará el SBC, aunque se beneficiarán de sus resultados: el SBC entrega al almacén las instrucciones de embalaje y etiquetado (K7) y los datos necesarios para la documentación. La tarea T9 (seguimiento e incidencias) se deja para una iteración posterior, cuando el historial de incidencias (K13) esté estructurado. Al proponerse una única solución, no es necesario el formulario OTA-1. \\ \hline
-\end{longtable}
-}
+La dirección apoya el proyecto porque encaja con su estrategia de fiabilidad. Los expertos pueden verlo como una amenaza (OM-2), por lo que se les implicará como coautores de la base de conocimiento.
+
+El proyecto es viable con los recursos disponibles. El presupuesto es asumible a la vista del ahorro esperado, el plazo es de unos ocho meses y cada experto dedicará de 3 a 4 horas semanales. El conocimiento formal está en los reglamentos y el tácito, en expertos dispuestos a colaborar.
+
+Las expectativas son realistas: el SBC apoya a los expertos, pero no los sustituye, no cubrirá todas las mercancías ni todos los países y no detectará mercancías ocultadas por el cliente.
+
+El ingeniero de conocimiento dirigirá el proyecto, con el director de operaciones como responsable por parte de la empresa y reuniones semanales de seguimiento. Los riesgos del proyecto son tres: la salida de un experto, que se mitiga documentando cada sesión de extracción; los cambios normativos durante el desarrollo, como la nueva edición del reglamento de carretera en enero de 2027, que se mitigan con una base de conocimiento versionada; y el crecimiento del alcance, que queda fijado en este documento.
+
+\subsubsection{Acciones propuestas}
+
+Se recomienda actuar sobre la \textbf{admisión y preparación para el transporte de los envíos con mercancías peligrosas o incompatibles}. Es el área que concentra los problemas más importantes (P1, P2, P3, P6) y los cuellos de botella de conocimiento más claros (OM-4: K2, K3, K4, K9).
+
+La solución es un SBC con dos módulos: uno de \textbf{admisión}, que automatiza T2, T3 y T4, y otro de \textbf{agrupación}, que automatiza T7 y, en parte, T6 (propone los modos permitidos ordenados, pero la elección la mantiene el responsable de tráfico). No se automatizan T1, T5 y T8, porque no son intensivas en conocimiento, ni T9, que queda para una iteración posterior. Al haber una única solución, no es necesario el formulario OTA-1.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak
 \section{Análisis de Impactos y Mejoras: Modelado de las Tareas y los Agentes.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% PENDIENTE: un TM-1 por cada tarea elegida en OM-5 (T2, T3, T4, T6, T7).
-% Las indicaciones de cada casilla están en ModeloContextoEnunciado.tex.
+Los formularios TM-1 y TM-2 se realizan para las tareas intensivas en conocimiento elegidas en OM-5 (T2, T3, T4, T6 y T7), y AM-1 para los agentes que las realizan. Todos describen la situación \textbf{actual}, antes del SBC.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Formulario TM-1: análisis de tareas.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Descripción detallada de tareas en el contexto del proceso de interés.
+% Macro: cabecera de una TM-1
+\newcommand{\tmuno}[1]{\textbf{Modelo de Tareas} & \textbf{Formulario TM-1: Análisis de Tareas} \\ \hline\hline \textsc{Tarea} & \textbf{#1} \\ \hline}
 
-\begin{table}[H]
-\scriptsize
-\begin{tabularx}{\textwidth}{|l|X|} \hline
-\textbf{Modelo de Tareas} & \textbf{Formulario TM-1: Análisis de Tareas} \\ \hline\hline
-\textsc{Tarea} & \\ \hline
-\textsc{Organización} & \\ \hline
-\textsc{Objetivo y valor} & \\ \hline
-\textsc{Dependencia y Flujos} & \textit{Tareas precedentes:} \\
- & \textit{Tareas que le siguen:} \\ \hline
-\textsc{Objetos manipulados} & \textit{Entrada:} \\
- & \textit{Salida:} \\
- & \textit{Internos:} \\ \hline
-\textsc{Tiempo y control} & \textit{Frecuencia y duración:} \\
- & \textit{Control:} \\
- & \textit{Restricciones:} \\ \hline
-\textsc{Agentes} & \\ \hline
-\textsc{Conocimiento y Capacidad} & \\ \hline
-\textsc{Recursos} & \\ \hline
-\textsc{Calidad y eficiencia} & \\ \hline
+\begin{table}[H]\scriptsize
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.6cm}|X|} \hline
+\tmuno{T2. Evaluación de la seguridad del contenido}
+\textsc{Organización} & Proceso de gestión y expedición de paquetes (etapa 2). Recepción y admisión, con apoyo de Mercancías peligrosas. \\ \hline
+\textsc{Objetivo y valor} & Determinar si el paquete contiene mercancías peligrosas, aunque se describan con nombres comerciales (``kit de belleza''), y clasificarlas (número ONU, clase, grupo de embalaje). Evita incidentes, rechazos y sanciones (P1--P3). \\ \hline
+\textsc{Dependencia y flujos} & Precedente: T1. Siguiente: T4. \\ \hline
+\textsc{Objetos manipulados} & \textit{Entrada:} datos del paquete (descripción, cantidades, peso, ficha de datos de seguridad). \textit{Salida:} clasificación del contenido. \textit{Internos:} listas de mercancías peligrosas y umbrales de cantidades limitadas. \\ \hline
+\textsc{Tiempo y control} & Unos 400 paquetes al día: 1--2 minutos, o unos 30 si hay que consultar al técnico (5\,\% de los casos). El operario inspecciona y, ante la duda, consulta. \textit{Restricción:} no se admite ninguna mercancía dudosa sin el técnico. \\ \hline
+\textsc{Agentes} & Operario de recepción y admisión; técnico de mercancías peligrosas. \\ \hline
+\textsc{Conocimiento y capacidad} & K2 y K3 (TM-2). La parte intensiva es reconocer mercancías peligrosas no declaradas. \\ \hline
+\textsc{Recursos} & Programa de gestión, reglamentos en papel y PDF, equipos de pesaje y medición. \\ \hline
+\textsc{Calidad y eficiencia} & Se mide por las mercancías peligrosas detectadas después de la admisión y por el tiempo de espera. Hoy es lenta y depende de que el técnico esté disponible. \\ \hline
 \end{tabularx}
-  \label{tab.TM1}
 \end{table}
 
+\begin{table}[H]\scriptsize
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.6cm}|X|} \hline
+\tmuno{T3. Evaluación de la normativa del país de destino}
+\textsc{Organización} & Proceso de gestión y expedición de paquetes (etapa 2). Aduanas. \\ \hline
+\textsc{Objetivo y valor} & Comprobar si el envío puede entrar en el país de destino y pasar por los de tránsito (prohibiciones, sanciones, documentos exigidos). Evita retenciones y devoluciones (P2, P4). \\ \hline
+\textsc{Dependencia y flujos} & Precedentes: T1 (y T2 si hace falta clasificar el contenido). Siguiente: T4. \\ \hline
+\textsc{Objetos manipulados} & \textit{Entrada:} origen, tránsitos, destino, contenido y valor. \textit{Salida:} dictamen (admisible, admisible con requisitos o prohibido). \textit{Internos:} listas de restricciones por país y de sanciones. \\ \hline
+\textsc{Tiempo y control} & En todos los envíos internacionales; unos minutos, más en los casos complejos. La realiza el responsable de aduanas a petición de recepción. \textit{Restricción:} no admitir envíos sujetos a embargo o prohibición. \\ \hline
+\textsc{Agentes} & Responsable de aduanas. \\ \hline
+\textsc{Conocimiento y capacidad} & K4 y K5 (TM-2). La parte intensiva es interpretar qué restricciones del destino afectan a cada mercancía. \\ \hline
+\textsc{Recursos} & Portales de aduanas, bases de datos aduaneras de la UE, listas de sanciones. \\ \hline
+\textsc{Calidad y eficiencia} & Porcentaje de envíos retenidos o devueltos (hoy, un 0,5\,\%) y tiempo de espera de recepción, que crece en temporada alta. \\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.6cm}|X|} \hline
+\tmuno{T4. Decisión de admisión}
+\textsc{Organización} & Proceso de gestión y expedición de paquetes (etapa 2). Recepción y admisión; los expertos intervienen en los casos dudosos. \\ \hline
+\textsc{Objetivo y valor} & Decidir si se acepta el paquete y en qué condiciones (embalaje, etiquetado, documentación y modos permitidos), integrando T2, T3, los criterios de la empresa y las restricciones de los transportistas (P1--P3, O1). \\ \hline
+\textsc{Dependencia y flujos} & Precedentes: T2 y T3. Siguientes: T5, T6 y T8, o la comunicación del rechazo al cliente. \\ \hline
+\textsc{Objetos manipulados} & \textit{Entrada:} datos del paquete, clasificación (T2) y dictamen aduanero (T3). \textit{Salida:} decisión (admitido, con condiciones o rechazado) e instrucciones de embalaje y etiquetado. \textit{Internos:} criterios de admisión y restricciones de los transportistas. \\ \hline
+\textsc{Tiempo y control} & Unas 400 decisiones al día: inmediata en los casos ordinarios, 30 minutos o más si hay que consultar. El operario decide los casos estándar y escala los dudosos. \textit{Restricción:} ninguna mercancía peligrosa se admite sin la validación del personal cualificado. \\ \hline
+\textsc{Agentes} & Operario de recepción y admisión; técnico de mercancías peligrosas y responsable de aduanas en los casos dudosos. \\ \hline
+\textsc{Conocimiento y capacidad} & K2, K3, K4 y K6 (TM-2). La parte intensiva es combinar todas las normas aplicables para fijar las condiciones del envío. \\ \hline
+\textsc{Recursos} & Programa de gestión y procedimiento interno de admisión. \\ \hline
+\textsc{Calidad y eficiencia} & Envíos rechazados después por transportistas o aduanas y tiempo de admisión. Hoy las decisiones no son homogéneas. \\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.6cm}|X|} \hline
+\tmuno{T6. Selección del modo de transporte}
+\textsc{Organización} & Proceso de gestión y expedición de paquetes (etapa 4). Tráfico y expedición. \\ \hline
+\textsc{Objetivo y valor} & Elegir el modo y el transportista de cada paquete admitido, entre los permitidos, equilibrando plazo, seguridad y coste (P5). \\ \hline
+\textsc{Dependencia y flujos} & Precedentes: T4 (modos permitidos) y T5 (peso y medidas finales). Siguientes: T7 y T8. \\ \hline
+\textsc{Objetos manipulados} & \textit{Entrada:} paquete embalado, modos permitidos, destino y plazo. \textit{Salida:} modo y transportista asignados. \textit{Internos:} tarifas, recargos, plazos y horarios de los transportistas (datos). \\ \hline
+\textsc{Tiempo y control} & A diario, unos minutos por envío, con la presión de los horarios de cierre. La realiza el responsable de tráfico. \textit{Restricción:} nunca un modo no permitido para la mercancía. \\ \hline
+\textsc{Agentes} & Responsable de tráfico. \\ \hline
+\textsc{Conocimiento y capacidad} & K2, K6 y K8 (TM-2). La parte intensiva es descartar los modos no permitidos y ponderar plazo, coste y seguridad. \\ \hline
+\textsc{Recursos} & Programa de gestión, hojas de cálculo de tarifas, portales de transportistas. \\ \hline
+\textsc{Calidad y eficiencia} & Coste del flete y cumplimiento del plazo acordado. Hoy se repite por inercia el transportista habitual. \\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.6cm}|X|} \hline
+\tmuno{T7. Agrupación de paquetes en envíos}
+\textsc{Organización} & Proceso de gestión y expedición de paquetes (etapa 4). Tráfico y expedición. \\ \hline
+\textsc{Objetivo y valor} & Agrupar los paquetes de un mismo modo y ruta en unidades de carga, separando las mercancías incompatibles y aprovechando el espacio y el peso (P6). \\ \hline
+\textsc{Dependencia y flujos} & Precedentes: T5 y T6. Siguientes: T8 y el despacho. \\ \hline
+\textsc{Objetos manipulados} & \textit{Entrada:} paquetes (medidas, peso, apilabilidad, clase de peligro o naturaleza sensible) y unidades de carga disponibles. \textit{Salida:} plan de agrupación por unidad de carga. \textit{Internos:} tablas de segregación y criterios internos. \\ \hline
+\textsc{Tiempo y control} & Varias veces al día, en los 15--45 minutos previos a cada cierre. La realiza el responsable de tráfico. \textit{Restricción:} la separación entre mercancías incompatibles nunca se sacrifica para ganar espacio; se respetan los límites de peso y volumen. \\ \hline
+\textsc{Agentes} & Responsable de tráfico, que consulta al técnico de mercancías peligrosas si hay tiempo. \\ \hline
+\textsc{Conocimiento y capacidad} & K9 y K10 (TM-2). La parte intensiva es decidir qué mercancías pueden viajar juntas y cómo repartirlas. \\ \hline
+\textsc{Recursos} & Programa de gestión, tablas de segregación de los reglamentos, almacén y equipos de carga. \\ \hline
+\textsc{Calidad y eficiencia} & Ocupación de las unidades de carga (hoy no se calcula) y daños y reclamaciones. La agrupación se hace ``a ojo''. \\ \hline
+\end{tabularx}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak
 \subsection{Formulario TM-2: análisis de los cuellos de botella del conocimiento.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% PENDIENTE: un TM-2 por cada elemento de conocimiento relevante de las tareas elegidas.
-% La última columna son dos preguntas que se responden por separado y con una breve explicación.
+En la última columna se responde por separado a dos preguntas: \textit{¿supone un cuello de botella?} y \textit{¿debe (y puede) mejorarse con el SBC?} Los números entre paréntesis remiten a los comentarios de OM-4. ``Basado en la acción'' se refiere al conocimiento que se adquiere repitiendo actividades físicas (como conducir).
 
-Especificación del conocimiento que se emplea en una tarea, sus cuellos de botella y posibles mejoras.
+% Macros: cabecera de una TM-2 y filas
+\newcommand{\tmdos}[4]{\textbf{Modelo de Tareas} & \multicolumn{2}{l|}{\textbf{Formulario TM-2: Elemento de Conocimiento}} \\ \hline\hline
+\textsc{Nombre} & \multicolumn{2}{l|}{#1} \\ \hline
+\textsc{Poseído por} & \multicolumn{2}{l|}{#2} \\ \hline
+\textsc{Usado en} & \multicolumn{2}{l|}{#3} \\ \hline
+\textsc{Dominio} & \multicolumn{2}{l|}{#4} \\ \hline
+\textbf{Naturaleza del conocimiento} & \textbf{Sí/No} & \textbf{¿Cuello de botella? / ¿Debe mejorarse?} \\ \hline}
+\newcommand{\fila}[3]{#1 & #2 & #3 \\ \hline}
+\newcommand{\bloque}[1]{\textbf{#1} & & \\ \hline}
 
-\begin{table}[H]
-\scriptsize
-\begin{tabularx}{\textwidth}{|p{5cm}|>{\PBS\raggedright}p{0.8cm}|X|} \hline
-\textbf{Modelo de Tareas} & \multicolumn{2}{l|}{\textbf{Formulario TM-2: Elemento de Co\-no\-ci\-mien\-to}} \\ \hline\hline
-\textsc{Nombre} &  \multicolumn{2}{l|}{}\\ \hline
-\textsc{Poseído por} &  \multicolumn{2}{l|}{}\\ \hline
-\textsc{Usado en} &  \multicolumn{2}{l|}{}\\ \hline
-\textsc{Dominio} &  \multicolumn{2}{l|}{}\\ \hline
-
-\textbf{Naturaleza del conocimiento} & \emph{(Sí/No)} &
-\textbf{¿Supone un cuello de botella?¿Debe ser mejorado?}\\ \hline Formal,
-riguroso & & \\ \hline Empírico, cuantitativo& & \\ \hline
-Heurístico, sentido común& & \\ \hline Altamente especializado,
-específico del dominio& & \\ \hline Basado en la experiencia& & \\
-\hline Basado en la acción$^1$& & \\ \hline Incompleto& & \\
-\hline Incierto, puede ser incorrecto & & \\ \hline Cambia con
-rapidez& &
-\\ \hline Difícil de verificar& & \\ \hline Tácito, difícil de
-transferir& & \\ \hline \textbf{Forma del conocimiento} & &\\ \hline
-Mental& & \\ \hline Papel& & \\ \hline Electrónica& & \\ \hline
-Habilidades& & \\ \hline Otros& & \\ \hline \textbf{Disponibilidad
-del Conocimiento} &  &\\ \hline Limitaciones en tiempo& & \\ \hline
-Limitaciones en espacio& & \\ \hline Limitaciones de acceso& & \\
-\hline Limitaciones de calidad& & \\ \hline Limitaciones de forma& &
-\\ \hline
+\begin{table}[H]\scriptsize\renewcommand{\arraystretch}{0.92}
+\begin{tabularx}{\textwidth}{|p{3.9cm}|c|X|} \hline
+\tmdos{K2. Normativa de mercancías peligrosas}{Técnico de mercancías peligrosas}{T2, T4, T6}{Reglamentos de transporte de mercancías peligrosas (carretera, mar y aire)}
+\fila{Formal, riguroso}{Sí}{No / Sí. Debe pasarse a reglas ejecutables.}
+\fila{Empírico, cuantitativo}{Sí}{No / Sí. Sus límites numéricos son automatizables.}
+\fila{Heurístico, sentido común}{No}{No / No.}
+\fila{Altamente especializado}{Sí}{Sí / Sí. Solo el técnico sabe interpretarlo.}
+\fila{Basado en la experiencia}{No}{No / No.}
+\fila{Basado en la acción}{No}{No / No.}
+\fila{Incompleto}{No}{No / No.}
+\fila{Incierto, puede ser incorrecto}{No}{No / No.}
+\fila{Cambia con rapidez}{Sí}{Sí / Sí. Nuevas ediciones cada 1--2 años.}
+\fila{Difícil de verificar}{No}{No / No.}
+\fila{Tácito, difícil de transferir}{No}{No / No.}
+\bloque{Forma del conocimiento}
+\fila{Mental}{No}{No / No.}
+\fila{Papel}{Sí}{Sí / Sí. Manuales extensos, de consulta lenta.}
+\fila{Electrónica}{Sí}{Sí / Sí. PDF sin integrar en el sistema.}
+\fila{Habilidades}{No}{No / No.}
+\fila{Otros}{No}{No / No.}
+\bloque{Disponibilidad del conocimiento}
+\fila{Limitaciones en tiempo}{Sí}{Sí / Sí. La consulta manual es lenta (3).}
+\fila{Limitaciones en espacio}{Sí}{Sí / Sí. Se necesita en recepción y tráfico (2).}
+\fila{Limitaciones de acceso}{Sí}{Sí / Sí. En parte en inglés y de pago.}
+\fila{Limitaciones de calidad}{No}{No / No.}
+\fila{Limitaciones de forma}{Sí}{Sí / Sí. Repartido en tres manuales (1).}
 \end{tabularx}
-  \label{tab.TM2}
 \end{table}
 
-{\scriptsize \noindent $^1$ Se refiere a conocimiento que se
-adquiere con la repetición de actividades físicas tales como
-conducir, encestar, etc.}
+\begin{table}[H]\scriptsize\renewcommand{\arraystretch}{0.92}
+\begin{tabularx}{\textwidth}{|p{3.9cm}|c|X|} \hline
+\tmdos{K3. Experiencia en identificación y clasificación de mercancías peligrosas}{Técnico de mercancías peligrosas}{T2, T4}{Identificación práctica de mercancías peligrosas en paquetería}
+\fila{Formal, riguroso}{No}{Sí / Sí. Dos expertos pueden resolver distinto (8).}
+\fila{Empírico, cuantitativo}{No}{No / No.}
+\fila{Heurístico, sentido común}{Sí}{Sí / Sí. Reglas prácticas que deben extraerse.}
+\fila{Altamente especializado}{Sí}{Sí / Sí. Solo lo domina el técnico (P3).}
+\fila{Basado en la experiencia}{Sí}{Sí / Sí. Se pierde si el técnico se va (O2).}
+\fila{Basado en la acción}{No}{No / No.}
+\fila{Incompleto}{Sí}{Sí / Sí. Limitado a los casos vividos.}
+\fila{Incierto, puede ser incorrecto}{Sí}{Sí / Sí. Parte de descripciones ambiguas.}
+\fila{Cambia con rapidez}{No}{No / Sí. Hay que revisarlo con los productos nuevos.}
+\fila{Difícil de verificar}{Sí}{Sí / Sí. No se registra el porqué (8).}
+\fila{Tácito, difícil de transferir}{Sí}{Sí / Sí. No está escrito (5).}
+\bloque{Forma del conocimiento}
+\fila{Mental}{Sí}{Sí / Sí. Debe explicitarse en el SBC.}
+\fila{Papel}{No}{No / No.}
+\fila{Electrónica}{No}{Sí / Sí. No se puede consultar en recepción.}
+\fila{Habilidades}{Sí}{Sí / Sí. Destreza que debe traducirse a reglas.}
+\fila{Otros}{No}{No / No.}
+\bloque{Disponibilidad del conocimiento}
+\fila{Limitaciones en tiempo}{Sí}{Sí / Sí. El técnico no siempre está disponible (7).}
+\fila{Limitaciones en espacio}{Sí}{Sí / Sí. El técnico no está en recepción (6).}
+\fila{Limitaciones de acceso}{Sí}{Sí / Sí. Hay que localizarlo en cada duda.}
+\fila{Limitaciones de calidad}{No}{No / Sí. Es correcto, pero poco homogéneo (8).}
+\fila{Limitaciones de forma}{Sí}{Sí / Sí. Es tácito (5).}
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize\renewcommand{\arraystretch}{0.92}
+\begin{tabularx}{\textwidth}{|p{3.9cm}|c|X|} \hline
+\tmdos{K4. Normativa aduanera y restricciones de cada país}{Responsable de aduanas}{T3, T4}{Legislación aduanera, restricciones por país y sanciones internacionales}
+\fila{Formal, riguroso}{Sí}{No / Sí. Debe unificarse y estructurarse.}
+\fila{Empírico, cuantitativo}{Sí}{No / Sí. Sus umbrales son comprobables automáticamente.}
+\fila{Heurístico, sentido común}{No}{No / No.}
+\fila{Altamente especializado}{Sí}{Sí / Sí. Solo lo domina el departamento de aduanas.}
+\fila{Basado en la experiencia}{No}{No / No.}
+\fila{Basado en la acción}{No}{No / No.}
+\fila{Incompleto}{Sí}{Sí / Sí. Fragmentado en muchas fuentes (12).}
+\fila{Incierto, puede ser incorrecto}{Sí}{Sí / Sí. A veces se aplican reglas obsoletas (12).}
+\fila{Cambia con rapidez}{Sí}{Sí / Sí. Las sanciones cambian a menudo (11).}
+\fila{Difícil de verificar}{Sí}{Sí / Sí. Fuentes de varios países e idiomas (9).}
+\fila{Tácito, difícil de transferir}{No}{No / No.}
+\bloque{Forma del conocimiento}
+\fila{Mental}{No}{No / No.}
+\fila{Papel}{Sí}{Sí / Sí. Impresos y notas sin integrar.}
+\fila{Electrónica}{Sí}{Sí / Sí. Bases y webs con formatos distintos.}
+\fila{Habilidades}{No}{No / No.}
+\fila{Otros}{No}{No / No.}
+\bloque{Disponibilidad del conocimiento}
+\fila{Limitaciones en tiempo}{Sí}{Sí / Sí. Consulta lenta y cambios conocidos tarde (11).}
+\fila{Limitaciones en espacio}{Sí}{Sí / Sí. Está en aduanas, pero se necesita en T4 (10).}
+\fila{Limitaciones de acceso}{Sí}{Sí / Sí. Recepción no puede consultarlo.}
+\fila{Limitaciones de calidad}{Sí}{Sí / Sí. Provoca retenciones en destino (12).}
+\fila{Limitaciones de forma}{Sí}{Sí / Sí. Está disperso (9).}
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize\renewcommand{\arraystretch}{0.92}
+\begin{tabularx}{\textwidth}{|p{3.9cm}|c|X|} \hline
+\tmdos{K5. Experiencia en tramitación aduanera y resolución de retenciones}{Responsable de aduanas}{T3, T9}{Gestión práctica de despachos aduaneros e incidencias en frontera}
+\fila{Formal, riguroso}{No}{Sí / Sí. No hay reglas preventivas aplicables en T3.}
+\fila{Empírico, cuantitativo}{No}{No / No.}
+\fila{Heurístico, sentido común}{Sí}{Sí / Sí. Qué envíos suele retener cada aduana.}
+\fila{Altamente especializado}{Sí}{Sí / Sí. Hay un único especialista.}
+\fila{Basado en la experiencia}{Sí}{Sí / Sí. Aprendido caso a caso (O2).}
+\fila{Basado en la acción}{No}{No / No.}
+\fila{Incompleto}{No}{No / Sí. Conviene sistematizar las causas de retención.}
+\fila{Incierto, puede ser incorrecto}{No}{No / No.}
+\fila{Cambia con rapidez}{No}{No / Sí. Cambian las prácticas de inspección.}
+\fila{Difícil de verificar}{Sí}{Sí / Sí. No hay un historial estructurado.}
+\fila{Tácito, difícil de transferir}{Sí}{Sí / Sí. Solo lo tiene el responsable (13).}
+\bloque{Forma del conocimiento}
+\fila{Mental}{Sí}{Sí / Sí. Debe explicitarse para T3.}
+\fila{Papel}{No}{No / No.}
+\fila{Electrónica}{No}{Sí / Sí. Sin ese soporte no puede automatizarse.}
+\fila{Habilidades}{Sí}{No / Sí. La parte técnica puede formalizarse.}
+\fila{Otros}{No}{No / No.}
+\bloque{Disponibilidad del conocimiento}
+\fila{Limitaciones en tiempo}{Sí}{Sí / Sí. Colas en temporada alta (14).}
+\fila{Limitaciones en espacio}{No}{No / No.}
+\fila{Limitaciones de acceso}{Sí}{Sí / Sí. Solo preguntando al responsable.}
+\fila{Limitaciones de calidad}{No}{No / No.}
+\fila{Limitaciones de forma}{Sí}{Sí / Sí. Es tácito y no está documentado (13).}
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize\renewcommand{\arraystretch}{0.92}
+\begin{tabularx}{\textwidth}{|p{3.9cm}|c|X|} \hline
+\tmdos{K6. Criterios de admisión de la empresa y restricciones de los transportistas}{Director de operaciones y técnico de mercancías peligrosas}{T4, T6}{Política interna de admisión y restricciones de los transportistas}
+\fila{Formal, riguroso}{Sí}{No / Sí. La parte escrita debe completarse.}
+\fila{Empírico, cuantitativo}{Sí}{No / Sí. Sus límites por transportista son validables.}
+\fila{Heurístico, sentido común}{Sí}{Sí / Sí. Hay costumbres no escritas (15).}
+\fila{Altamente especializado}{Sí}{Sí / Sí. Incluye las variaciones de aerolíneas y navieras.}
+\fila{Basado en la experiencia}{Sí}{Sí / Sí. Nace de incidencias pasadas.}
+\fila{Basado en la acción}{No}{No / No.}
+\fila{Incompleto}{Sí}{Sí / Sí. No cubre los casos dudosos (17).}
+\fila{Incierto, puede ser incorrecto}{Sí}{Sí / Sí. Es ambiguo y está desfasado (16, 17).}
+\fila{Cambia con rapidez}{Sí}{Sí / Sí. Los transportistas cambian sus restricciones (16).}
+\fila{Difícil de verificar}{Sí}{Sí / Sí. No se sabe si una costumbre sigue vigente.}
+\fila{Tácito, difícil de transferir}{Sí}{Sí / Sí. Dificulta el trabajo del personal temporal (15).}
+\bloque{Forma del conocimiento}
+\fila{Mental}{Sí}{Sí / Sí. Está en la memoria del personal veterano.}
+\fila{Papel}{Sí}{Sí / Sí. El procedimiento es breve y difícil de actualizar.}
+\fila{Electrónica}{Sí}{No / Sí. Hay documentos parciales sin estructurar.}
+\fila{Habilidades}{No}{No / No.}
+\fila{Otros}{No}{No / No.}
+\bloque{Disponibilidad del conocimiento}
+\fila{Limitaciones en tiempo}{Sí}{Sí / Sí. Se actualiza con lentitud (16).}
+\fila{Limitaciones en espacio}{No}{No / No.}
+\fila{Limitaciones de acceso}{Sí}{Sí / Sí. La parte no escrita hay que preguntarla.}
+\fila{Limitaciones de calidad}{Sí}{Sí / Sí. Es incompleto y está desactualizado (17).}
+\fila{Limitaciones de forma}{Sí}{Sí / Sí. Mezcla un texto breve y costumbres verbales.}
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize\renewcommand{\arraystretch}{0.92}
+\begin{tabularx}{\textwidth}{|p{3.9cm}|c|X|} \hline
+\tmdos{K8. Experiencia en la selección del modo de transporte}{Responsable de tráfico}{T6}{Planificación multimodal: equilibrio entre plazo, coste y seguridad}
+\fila{Formal, riguroso}{No}{Sí / Sí. Se decide ``a criterio'' (19).}
+\fila{Empírico, cuantitativo}{No}{No / Sí. Pondera coste y plazo de forma intuitiva.}
+\fila{Heurístico, sentido común}{Sí}{Sí / Sí. Sus prioridades no están escritas.}
+\fila{Altamente especializado}{Sí}{No / Sí. Conviene documentarlo (O2).}
+\fila{Basado en la experiencia}{Sí}{Sí / Sí. Lleva a repetir el transportista habitual (21).}
+\fila{Basado en la acción}{No}{No / No.}
+\fila{Incompleto}{Sí}{Sí / Sí. Con prisa no se comparan todas las opciones.}
+\fila{Incierto, puede ser incorrecto}{Sí}{Sí / Sí. Varía según la persona (21).}
+\fila{Cambia con rapidez}{No}{No / No.}
+\fila{Difícil de verificar}{Sí}{Sí / Sí. La elección no se justifica.}
+\fila{Tácito, difícil de transferir}{Sí}{Sí / Sí. Solo lo tiene el responsable (19).}
+\bloque{Forma del conocimiento}
+\fila{Mental}{Sí}{Sí / Sí. Debe pasar a criterios explícitos.}
+\fila{Papel}{No}{No / No.}
+\fila{Electrónica}{No}{Sí / Sí. Sin ese soporte no se pueden ordenar las opciones.}
+\fila{Habilidades}{Sí}{No / Sí. Es una pericia traducible a reglas.}
+\fila{Otros}{No}{No / No.}
+\bloque{Disponibilidad del conocimiento}
+\fila{Limitaciones en tiempo}{Sí}{Sí / Sí. La decisión se toma con prisa (20).}
+\fila{Limitaciones en espacio}{No}{No / No.}
+\fila{Limitaciones de acceso}{Sí}{No / Sí. Explicitarlo facilita las sustituciones.}
+\fila{Limitaciones de calidad}{Sí}{Sí / Sí. Se repite el transportista habitual (21).}
+\fila{Limitaciones de forma}{Sí}{Sí / Sí. Es tácito y no está escrito (19).}
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize\renewcommand{\arraystretch}{0.92}
+\begin{tabularx}{\textwidth}{|p{3.9cm}|c|X|} \hline
+\tmdos{K9. Reglas de compatibilidad y segregación entre mercancías}{Técnico de mercancías peligrosas}{T7}{Segregación de mercancías peligrosas e incompatibilidad de cargas}
+\fila{Formal, riguroso}{Sí}{No / Sí. Sus tablas deben ser restricciones duras.}
+\fila{Empírico, cuantitativo}{Sí}{No / Sí. Sus distancias mínimas son comprobables.}
+\fila{Heurístico, sentido común}{Sí}{Sí / Sí. Los criterios internos no están escritos (22).}
+\fila{Altamente especializado}{Sí}{Sí / Sí. Lo sabe el técnico, pero decide tráfico (23).}
+\fila{Basado en la experiencia}{Sí}{Sí / Sí. Las incompatibilidades no normativas se aplican sin método.}
+\fila{Basado en la acción}{No}{No / No.}
+\fila{Incompleto}{Sí}{Sí / Sí. Los criterios internos están incompletos (25).}
+\fila{Incierto, puede ser incorrecto}{Sí}{Sí / Sí. Con prisa pueden omitirse incompatibilidades (P6).}
+\fila{Cambia con rapidez}{No}{No / Sí. Cambia con cada edición: debe versionarse.}
+\fila{Difícil de verificar}{Sí}{Sí / Sí. No se comprueba cada par de bultos.}
+\fila{Tácito, difícil de transferir}{Sí}{Sí / Sí. Los criterios internos son tácitos (22).}
+\bloque{Forma del conocimiento}
+\fila{Mental}{Sí}{Sí / Sí. Los criterios internos están en la mente del experto.}
+\fila{Papel}{Sí}{Sí / Sí. Las tablas están en manuales extensos.}
+\fila{Electrónica}{Sí}{Sí / Sí. PDF sin integrar en tráfico.}
+\fila{Habilidades}{No}{No / No.}
+\fila{Otros}{No}{No / No.}
+\bloque{Disponibilidad del conocimiento}
+\fila{Limitaciones en tiempo}{Sí}{Sí / Sí. No hay tiempo al cerrar la carga (24).}
+\fila{Limitaciones en espacio}{Sí}{Sí / Sí. Está en mercancías peligrosas y se usa en tráfico (23).}
+\fila{Limitaciones de acceso}{Sí}{Sí / Sí. Tráfico no domina los reglamentos.}
+\fila{Limitaciones de calidad}{Sí}{Sí / Sí. No se aplica de forma sistemática (25).}
+\fila{Limitaciones de forma}{Sí}{Sí / Sí. Tres manuales y criterios verbales.}
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize\renewcommand{\arraystretch}{0.92}
+\begin{tabularx}{\textwidth}{|p{3.9cm}|c|X|} \hline
+\tmdos{K10. Experiencia en consolidación y estiba de la carga}{Responsable de tráfico}{T7}{Consolidación de paquetería y estiba segura}
+\fila{Formal, riguroso}{No}{Sí / Sí. No se calcula la ocupación (27).}
+\fila{Empírico, cuantitativo}{No}{Sí / Sí. Se hace ``a ojo'' (26).}
+\fila{Heurístico, sentido común}{Sí}{Sí / Sí. Hay criterios de estiba que incorporar.}
+\fila{Altamente especializado}{Sí}{No / Sí. Conviene preservarlo (O2).}
+\fila{Basado en la experiencia}{Sí}{Sí / Sí. Da resultados desiguales (26).}
+\fila{Basado en la acción}{No}{No / No.}
+\fila{Incompleto}{Sí}{Sí / Sí. No explora todas las combinaciones.}
+\fila{Incierto, puede ser incorrecto}{Sí}{Sí / Sí. Obliga a contratar más espacio (27).}
+\fila{Cambia con rapidez}{No}{No / No.}
+\fila{Difícil de verificar}{Sí}{Sí / Sí. No se mide el espacio desaprovechado.}
+\fila{Tácito, difícil de transferir}{Sí}{Sí / Sí. Es una intuición no escrita (26).}
+\bloque{Forma del conocimiento}
+\fila{Mental}{Sí}{Sí / Sí. Es un cálculo mental.}
+\fila{Papel}{No}{No / No.}
+\fila{Electrónica}{No}{Sí / Sí. No hay una herramienta de cálculo.}
+\fila{Habilidades}{Sí}{No / Sí. Se complementa con heurísticas.}
+\fila{Otros}{No}{No / No.}
+\bloque{Disponibilidad del conocimiento}
+\fila{Limitaciones en tiempo}{No}{No / Sí. Es rápido, pero mejorable.}
+\fila{Limitaciones en espacio}{No}{No / No.}
+\fila{Limitaciones de acceso}{No}{No / Sí. Explicitarlo permitiría que cualquiera obtuviera buenos planes.}
+\fila{Limitaciones de calidad}{Sí}{Sí / Sí. Quedan huecos y se desaprovecha flete (27).}
+\fila{Limitaciones de forma}{Sí}{Sí / Sí. Es intuitivo y debe formalizarse (26).}
+\end{tabularx}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak
 \subsection{Formulario AM-1: descripción de los agentes.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% PENDIENTE: un AM-1 por cada agente implicado en las tareas elegidas.
+Agentes que intervienen hoy en las tareas elegidas. El SBC no figura como agente porque todavía no existe.
 
-Descripción de los agentes implicados en las tareas de interés.
+% Macro: cabecera de un AM-1
+\newcommand{\amuno}[1]{\textbf{Modelo de Agentes} & \textbf{Formulario AM-1: Agentes} \\ \hline\hline \textsc{Nombre} & \textbf{#1} \\ \hline}
 
-\begin{table}[H]
-\scriptsize
-\begin{tabularx}{\textwidth}{|l|X|} \hline
-\textbf{Modelo de Agentes} & \textbf{Formulario AM-1: Agentes} \\ \hline\hline
-\textsc{Nombre} & \\ \hline
-\textsc{Organización} & \\ \hline
-\textsc{Implicado en} & \\ \hline
-\textsc{Se comunica con} & \\ \hline
-\textsc{Conocimiento} & \\ \hline
-\textsc{Otras Competencias} & \\ \hline
-\textsc{Responsabilidades y restricciones} & \\ \hline
+\begin{table}[H]\scriptsize
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.9cm}|X|} \hline
+\amuno{Operario de recepción y admisión}
+\textsc{Organización} & Humano. Operaciones, Recepción y admisión. \\ \hline
+\textsc{Implicado en} & T2 y T4 (además de T1). \\ \hline
+\textsc{Se comunica con} & Clientes, técnico de mercancías peligrosas, responsable de aduanas y operario de almacén y embalaje. \\ \hline
+\textsc{Conocimiento} & Posee K1 y nociones de K6. Necesita K2, K3 y K4, que no domina. \\ \hline
+\textsc{Otras competencias} & Atención al público; manejo del programa de gestión y de los equipos de pesaje. \\ \hline
+\textsc{Responsabilidades y restricciones} & Registra y admite los casos ordinarios. No está habilitado para validar mercancías peligrosas ni para resolver casos dudosos, que debe consultar. En temporada alta, parte de estos puestos los ocupa personal temporal sin experiencia. \\ \hline
 \end{tabularx}
- \label{tab.AM1}
+\end{table}
+
+\begin{table}[H]\scriptsize
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.9cm}|X|} \hline
+\amuno{Técnico de mercancías peligrosas}
+\textsc{Organización} & Humano. Cumplimiento normativo, Mercancías peligrosas. \\ \hline
+\textsc{Implicado en} & T2 y T4; asesora en T5, T6 y T7. \\ \hline
+\textsc{Se comunica con} & Operario de recepción y admisión, operario de almacén y embalaje, responsable de tráfico, responsable de aduanas y director de operaciones. \\ \hline
+\textsc{Conocimiento} & K2, K3, K6 (con el director de operaciones) y K9. \\ \hline
+\textsc{Otras competencias} & Titulación de consejero de seguridad; inglés técnico; interpretación de fichas de datos de seguridad. \\ \hline
+\textsc{Responsabilidades y restricciones} & Es el responsable técnico y legal del cumplimiento de la normativa de mercancías peligrosas, y valida y firma las decisiones sobre ellas. Su disponibilidad es limitada (turnos, vacaciones), lo que lo convierte en un cuello de botella (P3). \\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.9cm}|X|} \hline
+\amuno{Responsable de aduanas}
+\textsc{Organización} & Humano. Cumplimiento normativo, Aduanas. \\ \hline
+\textsc{Implicado en} & T3, T4 (casos dudosos), T8 y T9. \\ \hline
+\textsc{Se comunica con} & Operario de recepción y admisión, técnico de mercancías peligrosas, responsable de tráfico, agente de atención al cliente y agentes de aduanas externos. \\ \hline
+\textsc{Conocimiento} & K4, K5 y K11 (este último, con el responsable de tráfico). \\ \hline
+\textsc{Otras competencias} & Manejo de portales aduaneros e idiomas; relación de confianza con los agentes de aduanas. \\ \hline
+\textsc{Responsabilidades y restricciones} & Garantiza que los envíos internacionales cumplen los requisitos del destino y resuelve las retenciones. Como es el único responsable, en temporada alta se forman colas de consultas. \\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.9cm}|X|} \hline
+\amuno{Responsable de tráfico}
+\textsc{Organización} & Humano. Operaciones, Tráfico y expedición. \\ \hline
+\textsc{Implicado en} & T6, T7 y T8. \\ \hline
+\textsc{Se comunica con} & Técnico de mercancías peligrosas, responsable de aduanas, operario de almacén y embalaje, director de operaciones y transportistas. \\ \hline
+\textsc{Conocimiento} & K8, K10 y K11. Necesita K2, K6 y K9, que no domina. \\ \hline
+\textsc{Otras competencias} & Negociación con los transportistas; manejo de hojas de tarifas; trabajo bajo la presión de los horarios de cierre. \\ \hline
+\textsc{Responsabilidades y restricciones} & Decide el modo de transporte, el transportista y la agrupación antes de cada cierre. No domina los reglamentos de mercancías peligrosas ni las tablas de segregación. \\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\scriptsize
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.9cm}|X|} \hline
+\amuno{Director de operaciones}
+\textsc{Organización} & Humano. Dirige Operaciones; depende de la Dirección general. \\ \hline
+\textsc{Implicado en} & Define las políticas de admisión y transporte que se aplican en T4 y T6. \\ \hline
+\textsc{Se comunica con} & Dirección general, técnico de mercancías peligrosas, responsable de aduanas y responsable de tráfico. \\ \hline
+\textsc{Conocimiento} & K6 (con el técnico de mercancías peligrosas). \\ \hline
+\textsc{Otras competencias} & Gestión de operaciones, costes y equipos. \\ \hline
+\textsc{Responsabilidades y restricciones} & Fija los criterios de riesgo y de admisión de la empresa. Solo interviene en paquetes concretos en casos excepcionales. \\ \hline
+\end{tabularx}
 \end{table}
 
 
