@@ -1,11 +1,15 @@
+% !TeX program = latexmk
 \documentclass[12pt,a4paper,twoside,spanish]{article}      % Libro a 11 pt
 \usepackage[utf8]{inputenc}
 \usepackage[height=17.5cm,width=13.5cm]{geometry}
 \usepackage[spanish]{babel}         % diccionario
 \usepackage{epsfig}         % Graficos Postscript
+\usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{sectsty}
 \usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.multipart,babel}
 
 
 
@@ -94,9 +98,10 @@
 \HRule \\[0.5cm]
 \begin{center}
 % Letra lineal y negrita
-\textsf{\textbf{\large UN SISTEMA BASADO EN CONOCIMIENTO PARA \ldots(tema de la práctica)\\[0.75cm] MODELADO CONCEPTUAL EN COMMONKADS \\[0.5cm]}}
+\textsf{\textbf{\large UN SISTEMA BASADO EN CONOCIMIENTO PARA LA AGRUPACIÓN DE ENVÍOS EN UNIDADES DE CARGA\\[0.75cm] MODELADO CONCEPTUAL EN COMMONKADS \\[0.5cm]}}
 \HRule \vspace*{3cm}
 
+% TODO: completar los datos del grupo (los mismos que en la portada del modelo contextual)
 \textsf{\textbf{\normalsize [Nombres de los componentes del
 grupo]\\[5cm]
 Horario de prácticas:\\
@@ -134,145 +139,316 @@ prácticas: xxx}{Modelado Conceptual en CommonKADS.}
 \setlength{\parindent}{1,5cm} \setlength{\parskip}{0,7cm}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% BORRAR
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Esta entrega se corresponde con los modelos de conocimiento y
-comunicación.  No debéis olvidar que la práctica supone el 50\% de la nota de la asignatura
-y que, sólo a nivel general, el material utilizado en las prácticas entrará en
-el examen teórico. Por esta razón esta segunda entrega supone un
-``exame'' de los modelos de conocimiento y comunicación en lo que se
-refiere a los capítulos 5, 6, 7 y 9 del libro ``Knowledge engineering and
-management. The CommonKADS methodology"(Schreiber et col.)''. En las
-explicaciones que siguen me referiré siempre al libro de Schreiber et col.
-(aunque podéis encontrar el mismo material en el libro en español).
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Modelo de Conocimiento.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Se deberá entregar la documentación correspondiente a las tres fases
-de diseño del modelo (explicadas en el capítulo 7 del libro de Shreiber).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fase de Identificación}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Indicación de la/s tarea/s del formulario OM-3 a las que se
-referirá el modelo de conocimiento
+El modelo de conocimiento se refiere a la tarea \textbf{T7. Agrupación de
+paquetes en envíos} del formulario OM-3, la de mayor importancia entre las
+intensivas en conocimiento de Tráfico y expedición. De acuerdo con lo
+indicado por la profesora, la tarea \textbf{T6. Selección del modo de
+transporte} se integra en T7: elegir la unidad de carga de cada envío supone
+elegir también su modo de transporte y su transportista. Los modos
+permitidos (resultado de la decisión de admisión, T4) son una restricción
+dura de la asignación, y el plazo y el coste son preferencias.
 
-Tarea 6: Selección del modo de transporte.
-
-Tarea7: Agrupación de paquetes en envíos.
+\textbf{Vocabulario.} En los formularios del modelo contextual, la tarea
+habla de ``paquetes'' y de ``envíos'' con sentidos algo distintos. En este
+documento se fija el vocabulario del glosario: lo que se reparte son
+\emph{envíos} (cada uno con su destinatario) y se reparten entre
+\emph{unidades de carga}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Glosario}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-BREVE glosario de términos incluyendo sólo aquellos que no sean
-de uso común. Es decir, lo mínimo necesario para que una persona ajena al
-dominio que habéis elegido pueda entender el conocimiento que extraigáis.
+{\small
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.3cm}|X|} \hline
+\textbf{Término} & \textbf{Definición} \\ \hline\hline
+Bulto (paquete) & Pieza física independiente que se entrega al transportista y que este maneja sin abrirla: una caja, un saco o un palé con su carga. \\ \hline
+Envío & Todo lo que un cliente entrega para un mismo destinatario, en una misma operación y con un mismo documento; se compone de uno o varios bultos. En los escenarios, cada envío va entero a una sola unidad de carga. \\ \hline
+Unidad de carga & Camión, contenedor o unidad aérea con una capacidad máxima en palés y en kilos; la proporciona un transportista contratado. \\ \hline
+Grupaje & Juntar en una misma unidad de carga los envíos de varios clientes. \\ \hline
+Europalé & Palé normalizado de 1,20 $\times$ 0,80 m. La capacidad de una unidad de carga se cuenta en palés, es decir, en posiciones de suelo. \\ \hline
+Carga útil & Peso máximo de mercancía que admite una unidad de carga. \\ \hline
+Clase de peligro & Tipo de peligro principal de una mercancía peligrosa (clases 1 a 9). \\ \hline
+Número ONU & Código de cuatro cifras que identifica una mercancía peligrosa (por ejemplo, UN1266, perfumería). \\ \hline
+Segregación & Reglas que impiden cargar juntas ciertas mercancías, ya sean legales o criterios internos de la empresa. \\ \hline
+Salida & Un viaje concreto de una línea en una fecha y hora (por ejemplo, la salida de hoy a Madrid). \\ \hline
+\end{tabularx}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Escenarios}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Descripción de un par de escenarios de uso: ejemplos de entradas y salidas sobre los que se aplicará el sistema que proponéis. Tienen que ser compatibles son las entradas y salidas que habéis puesto en el TM-1 de la tarea que vais a implementar. Servirán para seleccionar la plantilla inferencial y para validar el modelo de conocimiento.
+Ambos escenarios son compatibles con las entradas y salidas del TM-1 de T7.
+La entrada son los envíos ya admitidos y embalados y las unidades de carga
+disponibles. Las tablas de segregación y los criterios internos de la empresa
+no son una entrada de la tarea: son conocimiento del dominio, que usa el
+sistema como base de conocimiento.
 
-Entrada: serie de paquetes ya admitidos y embalados, y con los conocimientos de seguridad y normativas.
+\paragraph{Escenario 1: hay solución con las unidades disponibles.}
+Salida de hoy de la línea Galicia--Madrid, con dos unidades de carga de
+carretera: U1, semirremolque del transportista A (33 palés, 25.000 kg), y U2,
+camión rígido del transportista B (18 palés, 12.000 kg). Todos los envíos
+admiten el modo carretera, de modo que la elección de modo y transportista
+(T6) se reduce a elegir entre U1 y U2.
 
-Salida: 
+{\small
+\begin{center}
+\begin{tabular}{|l|l|r|r|} \hline
+\textbf{Envío} & \textbf{Contenido} & \textbf{Palés} & \textbf{Peso (kg)} \\ \hline\hline
+E1 & Galletas (alimento) & 8 & 4.000 \\ \hline
+E2 & Perfume UN1266 (clase 3) & 4 & 2.400 \\ \hline
+E3 & Cloro para piscinas (clase 5.1) & 3 & 3.000 \\ \hline
+E4 & Desatascador alcalino (clase 8) & 2 & 1.600 \\ \hline
+E5 & Muebles & 12 & 4.800 \\ \hline
+E6 & Aerosoles UN1950 (clase 2) & 3 & 1.500 \\ \hline
+E7 & Papel & 6 & 7.200 \\ \hline
+\multicolumn{2}{|r|}{\textbf{Total}} & 38 & 24.500 \\ \hline
+\end{tabular}
+\end{center}
+}
+
+\emph{Salida esperada.} U1 = \{E1, E2, E5, E6, E7\}, con $8+4+12+3+6=33$ palés
+y $4.000+2.400+4.800+1.500+7.200=19.900$ kg; y U2 = \{E3, E4\}, con $3+2=5$
+palés y $3.000+1.600=4.600$ kg. Explicación: ``E3 va en U2 porque no puede
+compartir unidad con E1 (comburente con alimento) ni con E2 (comburente con
+inflamable); E4 va en U2 porque no puede compartir unidad con E1 (corrosivo
+con alimento)''.
+
+\emph{Comprobación.} Ninguna pareja incompatible comparte unidad; en U1,
+$33\leq 33$ palés y $19.900\leq 25.000$ kg; en U2, $5\leq 18$ palés y
+$4.600\leq 12.000$ kg. Como los 38 palés no caben en una sola unidad
+($38>33$), hacen falta las dos aunque el peso total (24.500 kg) sí cabría en U1.
+
+\paragraph{Escenario 2: no hay solución con las unidades disponibles.}
+Misma salida y mismas unidades, pero con solo tres envíos: E1 (galletas, 8
+palés, 4.000 kg), E3 (cloro para piscinas, 3 palés, 3.000 kg) y E8, un
+desatascador \emph{ácido} (clase 8, 2 palés, 1.600 kg). Los tres son
+incompatibles dos a dos: E1--E3 (comburente con alimento), E1--E8 (corrosivo
+con alimento) y E3--E8 (el ácido con el cloro desprende gas tóxico).
+
+\emph{Salida esperada.} ``No existe una asignación válida con 2 unidades: los
+tres envíos son incompatibles dos a dos y harían falta 3 unidades. Propuesta:
+añadir una tercera unidad o dejar E8 para la salida siguiente''. Este
+escenario comprueba que el sistema sabe decir que no hay solución y explicar
+por qué.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Elementos reutilizables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Elementos reutilizables que se hubiesen desarrollado con
-anterioridad, tales como esquemas de bases de datos ya existentes que
-podáis tomar como punto de partida para vuestro esquema del dominio.
-Probablemente no haya ninguno, pero...
+\begin{itemize}
+ \item \textbf{Tarea:} las plantillas de asignación y de diseño de
+ configuraciones del catálogo de CommonKADS.
+ \item \textbf{Dominio:} las fichas de envío y la lista de unidades de carga
+ con sus capacidades, que ya están en el programa de gestión de la empresa;
+ la lista de mercancías peligrosas y las tablas de segregación publicadas
+ (por ejemplo, las del ADR, de acceso gratuito).
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fase de Especificación}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Los apartados de esta sección  se deberán de acompañar de BREVES comentarios indicando
-cuestiones sobre la adaptabilidad de la plantilla al problema,
-explicación de cambios que se hayan realizado sobre la misma, cómo se ha
-aplicado la metodología de construcción del modelo de conocimiento, etc.
-
-EN DEFINITIVA, LOS COMENTARIOS DEBERÁN DEMOSTRAR QUE HABÉIS
-ENTENDIDO LOS PASOS EN LA CONSTRUCCION DEL MODELO Y, POR
-SUPUESTO, EL MODELO FINAL PROPUESTO.
-
-Excepto para la tarea y su método, para la especificación de los demás
-componentes del modelo de conocimiento se utilizará la notación gráfica
-(frente a la textual de CML) siempre que sea posible. En el caso de los
-mapeos de inferencias podéis encontrar un ejemplo de notación gráfica en
-la página 200 del libro de Alonso et col. y en la página 107 en el libro de
-Schreiber et col.
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Metodología empleada}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Justificación de la selección de la metodología \emph{Middle-in} o
-\emph{Middle-ou} a aplicar.
+Se emplea la estrategia \emph{middle-out}: se parte del conocimiento
+inferencial, es decir, de la estructura de inferencias de una plantilla, y
+desde ahí se completan hacia arriba la tarea y hacia abajo el dominio. Su
+condición es que la plantilla dé una buena aproximación de la estructura
+inferencial real, y aquí se cumple: la plantilla de asignación se parece
+mucho a lo que hace el responsable de tráfico (coger unos envíos, decidir
+cuáles van juntos y elegir la unidad de carga que les corresponde). La
+estrategia \emph{middle-in}, que avanza en paralelo desde la tarea y desde el
+dominio hasta encontrarse en medio, consume más tiempo y solo es necesaria
+cuando la plantilla tiene un grano demasiado grueso, lo que no ocurre.
+
+\textbf{Selección de la plantilla.} Se descartan las candidatas con estos
+argumentos:
+
+{\small
+\begin{center}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.4cm}|X|} \hline
+\textbf{Candidata} & \textbf{Decisión} \\ \hline\hline
+Clasificación & No: la salida no es una clase de una lista fija para un objeto. \\ \hline
+Asesoramiento & No: decide sobre un caso, y aquí hay que repartir muchos envíos a la vez. \\ \hline
+Scheduling / planificación & No: dentro de una salida no hay huecos de tiempo ni acciones que ordenar. \\ \hline
+Diseño de configuraciones & Posible solo si importara la colocación exacta dentro de la unidad o el peso por eje, que queda fuera del alcance. \\ \hline
+\textbf{Asignación} & \textbf{Sí}: hay dos conjuntos (envíos y unidades de carga), una correspondencia que no es uno a uno, y restricciones y preferencias. \\ \hline
+\end{tabularx}
+\end{center}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Plantilla anotada}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Gráfico con la plantilla notada. Todas las modificaciones propuestas sobre la
-plantilla original deberán justificarse en este punto.
+% COMPROBAR en el capítulo 6 del libro de Schreiber los nombres exactos de los
+% roles y las inferencias de la plantilla de asignación antes de entregar.
+
+La figura muestra la plantilla de asignación anotada con el escenario~1. En
+la iteración~1 se eligen los envíos con alguna incompatibilidad, se agrupan
+los que pueden ir juntos y se asigna la primera unidad que sirve.
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  rol/.style={draw, rectangle, minimum width=3.3cm, minimum height=1.2cm, text width=3.1cm, align=center, font=\scriptsize, inner sep=2pt},
+  est/.style={rol, dashed},
+  inf/.style={draw, ellipse, minimum width=3.3cm, minimum height=1.2cm, align=center, font=\scriptsize\bfseries, inner sep=1pt, fill=gray!10},
+  flecha/.style={-{Stealth[length=2mm]}},
+]
+\node[rol] (suj) at (0,0) {\textbf{sujetos}\\ $\{$E1, \ldots, E7$\}$};
+\node[inf] (sel) at (4.4,0) {seleccionar\\ subconjunto};
+\node[rol] (sub) at (8.8,0) {\textbf{subconjunto de sujetos}\\ it.~1: $\{$E1, E2, E3, E4$\}$};
+\node[inf] (agr) at (13.2,0) {agrupar};
+\node[est] (csel) at (4.4,2.6) {\textbf{conocimiento de selección}\\ primero los envíos con incompatibilidades};
+\node[est] (rag) at (13.2,2.6) {\textbf{restricciones de agrupación}\\ tabla de incompatibilidades};
+\node[rol] (gru) at (13.2,-2.8) {\textbf{grupo de sujetos}\\ it.~1: $\{$E1, E2$\}$};
+\node[inf] (asi) at (8.8,-2.8) {asignar};
+\node[rol] (rec) at (4.4,-2.8) {\textbf{recurso}\\ it.~1: U1};
+\node[rol] (act) at (0,-2.8) {\textbf{asignaciones actuales}\\ (E1,U1), (E2,U1), \ldots};
+\node[rol] (res) at (8.8,-5.6) {\textbf{recursos}\\ $\{$U1, U2$\}$ con sus capacidades};
+\node[est] (ras) at (4.4,-5.6) {\textbf{restricciones y preferencias de asignación}\\ no superar palés ni kg; no compartir con incompatibles};
+\draw[flecha] (suj) -- (sel);
+\draw[flecha] (sel) -- (sub);
+\draw[flecha] (sub) -- (agr);
+\draw[flecha] (csel) -- (sel);
+\draw[flecha] (rag) -- (agr);
+\draw[flecha] (agr) -- (gru);
+\draw[flecha] (gru) -- (asi);
+\draw[flecha] (res) -- (asi);
+\draw[flecha] (ras) -- (asi);
+\draw[flecha] (asi) -- (rec);
+\draw[flecha] (rec) -- (act);
+\draw[flecha, dashed] (act.south) .. controls +(0,-1.3) and +(-1.6,-1.0) .. (asi.south west);
+\end{tikzpicture}}
+\caption{Plantilla de asignación anotada con el escenario 1. Los rectángulos
+son roles dinámicos, los rectángulos discontinuos son roles estáticos
+(conocimiento del dominio), las elipses son inferencias y ``it.~$n$'' indica
+el valor del rol en la iteración $n$.}
+\end{figure}
+
+\textbf{Método de la tarea.} Mientras queden envíos sin asignar: (1) se
+selecciona un subconjunto de envíos (los más prioritarios o difíciles
+primero); (2) se agrupan los que deben ir juntos; (3) se asigna a ese grupo
+una unidad de carga, respetando las restricciones y preferencias y las
+asignaciones ya hechas; y (4) se añade la pareja (grupo, unidad) a las
+asignaciones actuales. En el escenario~1: la iteración~1 asigna \{E1, E2\} a
+U1; la iteración~2 asigna \{E3, E4\} a U2, porque U1 ya lleva E1, que es
+incompatible con ellos; y la iteración~3 asigna \{E5, E6, E7\} a U1 por la
+preferencia de llenar primero la unidad grande, quedando U1 con 33 palés.
+
+\textbf{Modificaciones a la plantilla y su justificación.}
+\begin{itemize}
+ \item En el método genérico, un recurso asignado deja de estar disponible.
+ Aquí una unidad de carga admite varios grupos mientras le quede capacidad,
+ así que solo sale de la lista cuando está llena.
+ \item Si ninguna unidad es válida (escenario~2), el método debe terminar con
+ ``sin solución'' y su explicación, o bien deshacer asignaciones anteriores
+ (variación con \emph{backtracking}).
+ \item Se añade a la salida una \emph{explicación} de cada asignación,
+ porque el TM-1 de T7 y el escenario~2 la exigen y la plantilla original no
+ la contempla.
+ \item La integración de T6 no añade inferencias: el modo y el transportista
+ de cada envío quedan fijados al asignarlo a una unidad de carga, y los modos
+ permitidos se aplican como restricción de asignación.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Esquema inicial del dominio}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Boceto del que se parte que,
-posteriormente, se irá refinando al realizar el mapeo de las
-inferencias, etc.
+Boceto con lo más evidente, que se completará al mapear los roles de la
+plantilla. Cada envío se asigna a \emph{exactamente una} unidad de carga
+(cardinalidad 1), y una unidad lleva \emph{cualquier número} de envíos
+(cardinalidad 0+).
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  concepto/.style={draw, rectangle split, rectangle split parts=2, font=\scriptsize, text width=4.8cm, align=left, inner sep=3pt},
+  sub/.style={draw, rectangle, font=\scriptsize, minimum width=2.6cm, minimum height=0.7cm, align=center},
+]
+\node[concepto] (env) at (0,0) {\textbf{envío}\nodepart{second}palés: NATURAL\\ peso-kg: REAL\\ clase-peligro: valor-clase\\ es-alimento: BOOLEAN\\ modos-permitidos: modo\\ salida: STRING};
+\node[concepto] (uc) at (9,0) {\textbf{unidad-de-carga}\nodepart{second}palés-máx: NATURAL\\ carga-útil-kg: REAL\\ modo: modo\\ transportista: STRING\\ salida: STRING};
+\node[sub] (s1) at (6.2,-3.4) {semirremolque};
+\node[sub] (s2) at (9.2,-3.4) {camión-rígido};
+\node[sub] (s3) at (12.2,-3.4) {furgoneta};
+\draw (env.east) -- node[above, font=\scriptsize] {asignado-a} (uc.west);
+\node[font=\scriptsize] at (2.9,0.25) {0+};
+\node[font=\scriptsize] at (6.1,0.25) {1};
+\draw[-{Triangle[open, length=3mm]}] (s1.north) -- ++(0,0.6) -| (uc.south);
+\draw[-{Triangle[open, length=3mm]}] (s2.north) -- (uc.south);
+\draw[-{Triangle[open, length=3mm]}] (s3.north) -- ++(0,0.6) -| (uc.south);
+\end{tikzpicture}}
+\caption{Esquema inicial del dominio: conceptos, subtipos y la relación
+\texttt{asignado-a}.}
+\end{figure}
+
+\textbf{Tipos de valor.} \texttt{valor-clase}: nominal, \{ninguna, 2, 3, 5.1,
+6.1, 8, 9\}. \texttt{modo}: nominal, \{carretera, mar, aire\}.
+
+\textbf{Tipos de regla.}
+
+{\small
+\begin{center}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.6cm}|X|>{\raggedright\arraybackslash}p{2.7cm}|} \hline
+\textbf{Tipo} & \textbf{Antecedente y consecuente} & \textbf{Símbolo de conexión} \\ \hline\hline
+incompatibilidad & Antecedente: expresión sobre un par de envíos. Consecuente: \texttt{compatibilidad = falsa}. & PROHÍBE-CARGA-COMÚN \\ \hline
+capacidad & Antecedente: los envíos asignados a una unidad. Consecuente: la suma de palés y de kilos no supera \texttt{palés-máx} ni \texttt{carga-útil-kg}. & LIMITA \\ \hline
+modo-permitido & Antecedente: expresión sobre la clase de peligro del envío. Consecuente: valor de \texttt{modos-permitidos}. Es la parte de T6 integrada en T7. & RESTRINGE \\ \hline
+\end{tabularx}
+\end{center}
+}
+
+Dos instancias del tipo \texttt{incompatibilidad}, que en esta empresa
+ficticia son criterios internos más estrictos que la ley:
+\begin{itemize}
+ \item \texttt{envío-a.clase-peligro = 5.1 Y envío-b.es-alimento = verdadero}
+ PROHÍBE-CARGA-COMÚN.
+ \item \texttt{envío-a.clase-peligro = 5.1 Y envío-b.clase-peligro = 3}
+ PROHÍBE-CARGA-COMÚN.
+\end{itemize}
+
+\textit{(El resto de este apartado se completa en la semana 3: estructura
+inferencial y mapeo de roles, especificación de la tarea, esquema del dominio
+final y fase de refinamiento.)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Estructura inferencial y Mapeo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Gráfico de la estruatura inferencial (solo si difiere de la plantilla seleccionada).
-
-Mapeo de cada una de las inferencias y roles de la plantilla seleccionada.
+\textit{Pendiente: semana 3.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Tarea}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Especificación de la tarea (entradas y salidas) y Método de la tarea
+
+\textit{Pendiente: semana 3.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Esquema del dominio final}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\textit{Pendiente: semana 3.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fase De Refinamiento}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Validación}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Validación del modelo sobre los escenarios propuestos en la fase
-de identificación.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Bases de conocimientos}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Para estas prácticas, bastará con que las bases
-de conocimientos contengan TRES o CUATRO instancias de cada tipo de
-regla encontrado.
+\textit{Pendiente: semana 3.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -280,40 +456,7 @@ regla encontrado.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-El modelado conceptual no está completo sin el modelo de
-comunicación, que es necesario realizar antes de la implementación. El
-modelo se realizará siguiendo las pautas de la metodología CommonKADS
-resumidas en la tabla 9.8 y se comprobará su corrección con respecto a los
-otros modelos ya construidos siguiendo las guías que se proporcionan en el
-apartado 9.7.4 del libro. En el documento a entregar se incluirán
-comentarios BREVES que demuestren que se han tenido en cuenta estos
-aspectos.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Plan de comunicación general}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Brevemente COMENTADO y que incluya:
-\begin{itemize}
- \item Diagrama de diálogo
- \item Información de control de las transacciones en forma de
-seudocódigo o de diagrama de transición
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Descripción de las Transacciones}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Modelo CM-1 que incluya las transacciones identificadas
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Especificación de las transacciones}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Modelo CM-2 para las transacciones identificadas. 
-
-\textbf{NOTA IMPORTANTE:} Normalmente los modelos de comunicación de las prácticas son sencillos, por lo que este formulario puede no ser necesario. Se realizará sólo
-para las transacciones complejas que no queden completamente
-especificadas con el modelo CM-1.
+\textit{Pendiente: semana 3.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %FINAL DEL LIBRO
