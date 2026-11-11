@@ -1,0 +1,3 @@
+Esto es simplemente una prueba para testear algo con
+git, no tiene absolutamente nada que ver con SBC.
+Por favor, ignorar.
